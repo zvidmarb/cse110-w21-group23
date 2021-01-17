@@ -8,9 +8,10 @@
     - item
 - New Discussion
     - item
-- Action Items
-    - person
-        -item
+
+### Action Items
+- person
+    - item
 
 ### Decisions Made
 - Decision
