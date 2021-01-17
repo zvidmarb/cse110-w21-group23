@@ -1,4 +1,4 @@
-#Meeting Minutes: Group 23
+# Meeting Minutes: Group 23
 - Topic: Kickoff Meeting
 - Location: Zoom
 - Time: 8:00PM
@@ -9,12 +9,12 @@
 - Team contract
 - Group Page and Video
     - theme/brand
-    - roster/overiew and personal page link
-    - mp4 video in the page
+    - logistics of updaing roster and personal page links
+    - talk about video
 
 ### Action Items
-- Person
-    - item
+- Have signed PDF of rules in the repo by Tuesday 
+- Have individual portion of the roster up by Tuesday 
 
 ### Decisions Made
 - Decision
