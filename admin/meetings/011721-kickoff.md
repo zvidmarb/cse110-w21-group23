@@ -4,13 +4,17 @@
 - Time: 8:00PM
 
 ### Agenda
-- Follow-Up Discussion (progress updates)
-- New Discussion
-- Action Items
+- Define Roles
+- Set up Development Rules
+- Team Contract
+
+### Action Items
+- Person
+    - item
 
 ### Decisions Made
 - Decision
-  - Reasoning/Opinions
+    - Reasoning/Opinions
 
 ### Attendance
 - [ ] Colin Young
