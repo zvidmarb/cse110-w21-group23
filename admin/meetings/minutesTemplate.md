@@ -5,16 +5,16 @@
 
 ### Agenda
 - Follow-Up Discussion (progress updates)
-  - item
+    - item
 - New Discussion
-  - item
+    - item
 - Action Items
-  - person
-    -item 
+    - person
+        -item
 
 ### Decisions Made
 - Decision
-  - Reasoning/Opinions
+    - Reasoning/Opinions
 
 ### Attendance
 - [ ] Colin Young
