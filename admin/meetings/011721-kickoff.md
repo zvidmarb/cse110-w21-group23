@@ -1,12 +1,16 @@
-# Meeting Minutes: Group 23
+#Meeting Minutes: Group 23
 - Topic: Kickoff Meeting
 - Location: Zoom
 - Time: 8:00PM
 
 ### Agenda
-- Define Roles
-- Set up Development Rules
-- Team Contract
+- Set up Github organization
+- Define roles
+- Team contract
+- Group Page and Video
+    - theme/brand
+    - roster/overiew and personal page link
+    - mp4 video in the page
 
 ### Action Items
 - Person
@@ -25,4 +29,3 @@
 - [ ] Nawwar Tohme
 - [ ] Edgar Flores
 - [ ] Zeven Vidmar-Barker
-
