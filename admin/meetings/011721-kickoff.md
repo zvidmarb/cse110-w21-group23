@@ -32,7 +32,7 @@
 
 
 ### Decisions Made / Team Notes
-- **Team name: Whatever You Want ;)**
+- Team name: **Whatever You Want ;)**
 - Theme/Branch: **Code Fast, Code Well**
 
 **Role of the member**
