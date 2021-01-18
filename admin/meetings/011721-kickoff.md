@@ -1,8 +1,10 @@
 # Meeting Minutes: Group 23
-- Topic: Kickoff Meeting
-- Location: Zoom at [https://ucsd.zoom.us/j/94240064192]
-- Time Start: 8:00PM PST
-- Time Ends: 9:30PM PST
+### Topic: Kickoff Meeting
+### Location: Zoom at [https://ucsd.zoom.us/j/94240064192]
+### Time Start: 8:00PM PST
+### Time Ends: 9:30PM PST
+
+---
 
 ### Agenda
 - Introductions
