@@ -18,8 +18,11 @@
     
 
 ### Action Items
+#### Summary
 - Have signed PDF of rules in the repo by **Tuesday night(Janurary 18th 11:59, 2021)**
-- Have individual portion of the roster up by **Tuesday(Janurary 18th 11:59, 2021)**
+- Have individual portion of the group page up by **Tuesday(Janurary 18th 11:59, 2021)**
+
+#### Specification
 - Colin
     - submit kickoff meeting info
     - submit group bonding screenshot
@@ -68,6 +71,6 @@
 - [X] Edgar Flores
 - [X] Zeven Vidmar-Barker
 
-#### Minutes submitted by: Colin
-#### Minutes reviewed by: Stella
+##### Minutes submitted by: Colin
+##### Minutes reviewed by: Stella
 
