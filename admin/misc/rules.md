@@ -1,15 +1,36 @@
 # Group 23 Team Contract
 
 ### Primary Means of Communication and Expectations
-- State your team’s agreed upon various means of communication and expectations for response. (Example: All members will be expected to read emails from anyone in the group on a daily basis and respond in not more than 12 hours.)
+- Slack/emails 
+    - for faster communication, DM on slack
+
+- Communication
+    - 1 hour prior notice for absenses
+    - Speak up rather than suffering silently
+    - Feedback, not criticisms
+    - Reach out for help if needed
 
 ### Scheduling Meetings (Schedule at least one meeting as part of constructing your team agreement.)
-- Agreed upon means of scheduling meetings. (Example: Team will agree, at the end of each class, to set any meetings times and agenda needed before the next class and beyond if possible. Team members will take turns to send out a reminder of the meeting with an agenda within eight hours after the class.)
+- Thursday Nights 7:00 onwards
+    - one hour, subject to change depending on agenda
 
 ### General Responsibilities for All Team Members
-- This element of the team working agreement is the list of rules/agreements or the contract that all members agrees to live by.
+- Deadlines
+    - Inability to meet deadlines should be communicated as early as possible, at least 24 hours beforehand. 
+    - Soft deadlines will be set 2 days before class deadlines
+
+- Code maintainability
+    - Documentation: have comments for functions, parameters, variables
+    - Strive for code reusability
+    - Write clean, readable code
+    - 4 spaces
 
 ### Conflict Resolution
-- Each team should have an agreed-upon approach to addressing issues that may arise. For example, if a team member is not meeting deadlines, the team agrees to do X [specific action decided by the team] to address the problem before bringing the issue to a TA or professor.
+- Decision/Logistical disagreements will be resolved via a vote at our meetings
+    - Stella and Colin will be tiebreakers
+
+- Personal disagreements/qualms
+    - Reach out to Stella or Colin to help mediate
+    - If no agreement is met, reach out to TA as last resort
 
 ### Signature
