@@ -1,7 +1,8 @@
 # Meeting Minutes: Group 23
 - Topic: Kickoff Meeting
 - Location: Zoom
-- Time: 8:00PM
+- Time Start: 8:00PM
+- Time Ends: 9:30PM
 
 ### Agenda
 - Introductions
@@ -60,3 +61,5 @@
 - [X] Nawwar Tohme
 - [X] Edgar Flores
 - [X] Zeven Vidmar-Barker
+
+### Minutes submitted by: Colin
