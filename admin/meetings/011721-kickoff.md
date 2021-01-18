@@ -1,8 +1,8 @@
 # Meeting Minutes: Group 23
 - Topic: Kickoff Meeting
-- Location: Zoom
-- Time Start: 8:00PM
-- Time Ends: 9:30PM
+- Location: Zoom at [https://ucsd.zoom.us/j/94240064192]
+- Time Start: 8:00PM PST
+- Time Ends: 9:30PM PST
 
 ### Agenda
 - Introductions
@@ -12,11 +12,12 @@
 - Group Page and Video
     - theme/brand
     - logistics of updaing roster and personal page links
-    - talk about video
+    - Record the intro video
+    
 
 ### Action Items
-- Have signed PDF of rules in the repo by Tuesday 
-- Have individual portion of the roster up by Tuesday 
+- Have signed PDF of rules in the repo by **Tuesday night(Janurary 18th 11:59, 2021)**
+- Have individual portion of the roster up by **Tuesday(Janurary 18th 11:59, 2021)**
 - Colin
     - submit kickoff meeting info
     - submit group bonding screenshot
@@ -27,13 +28,14 @@
 - Everyone
     - push markdown intro into new org page
         - include intro and link to original page
-        - due tomorrow night
+        - due Tuesday night, **Janurary 18th 11:59, 2021**
 
 
 ### Decisions Made / Team Notes
-- Team name: Whatever You Want ;)
-- Theme/Branch: 
-    - Code Fast, Code Well
+- **Team name: Whatever You Want ;)**
+- Theme/Branch: **Code Fast, Code Well**
+
+**Role of the member**
 - LA
     - fast learner
 - Benny 
@@ -41,7 +43,7 @@
 - Edgar 
     - can take up anything
 - Stella
-    - Stella
+    - back end
 - Nawwar
     - does a little bit of everything (math/algo)
 - Zeven (ui/ux)
@@ -50,6 +52,8 @@
     - a little front end
     - nodejs
     - sql for databases
+- Colin
+    -
   
 
 ### Attendance
@@ -62,4 +66,6 @@
 - [X] Edgar Flores
 - [X] Zeven Vidmar-Barker
 
-### Minutes submitted by: Colin
+#### Minutes submitted by: Colin
+#### Minutes reviewed by: Stella
+
