@@ -18,8 +18,21 @@
 - Have individual portion of the roster up by Tuesday 
 - Colin
     - submit kickoff meeting info
+    - submit group bonding screenshot
+    - export rules markdown pdf to slack
+    - create new repo inside of organization
+        - start a markdown site in
+    - put video on website
+- Everyone
+    - push markdown intro into new org page
+        - include intro and link to original page
+        - due tomorrow night
 
-### Decisions Made
+
+### Decisions Made / Team Notes
+- Team name: Whatever You Want ;)
+- Theme/Branch: 
+    - Code Fast, Code Well
 - LA
     - fast learner
 - Benny 
