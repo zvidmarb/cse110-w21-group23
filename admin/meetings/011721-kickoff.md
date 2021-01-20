@@ -19,8 +19,8 @@
 
 ### Action Items
 #### Summary
-- Have signed PDF of rules in the repo by **Tuesday night(Janurary 18th 11:59, 2021)**
-- Have individual portion of the group page up by **Tuesday(Janurary 18th 11:59, 2021)**
+- Have signed PDF of rules in the repo by **Tuesday night(Janurary 19th 11:59, 2021)**
+- Have individual portion of the group page up by **Tuesday(Janurary 19th 11:59, 2021)**
 
 #### Specification
 - Colin
@@ -33,7 +33,7 @@
 - Everyone
     - push markdown intro into new org page
         - include intro and link to original page
-        - due Tuesday night, **Janurary 18th 11:59, 2021**
+        - due Tuesday night, **Janurary 19th 11:59, 2021**
 
 
 ### Decisions Made / Team Notes
