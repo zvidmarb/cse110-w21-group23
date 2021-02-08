@@ -1,3 +1,2 @@
-# page-and-video
-
-group introduction page and video
+# Home Site
+Source code for group introduction, video, and documentation.
