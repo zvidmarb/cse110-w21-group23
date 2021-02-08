@@ -4,9 +4,9 @@ You can find the documentation for our pomo timer [here](jsdocs)!
 
 ## CI/CD Pipeline: 
 
-Phase one of our CI/CD pipeline is integrated as follows:\
+Phase one of our CI/CD pipeline is integrated as follows:
 
-![cicd pipeline](cicd.drawio.png)\
+![cicd pipeline](cicd.drawio.png)
 
 Our primary development workflow will be centered along feature branch development and merging into master after code several code-quality checks. Among these code quality checks are:
 
@@ -22,5 +22,5 @@ As far as documentation generation goes, JSDoc seems to be widely considered a b
 ### Manual Code Review:
 At the end of the day, the aforementioned tools are just to make our work easier: no tool will be a catch-all for errors and a spotless codebase. Before each merge into the master branch, we will have a manual code review to ensure that our codebase stays clean.
 
-### For a demonstration on our CI/CD pipeline, see this video:
+### Video Demonstration of our Pipeline:
 [![](http://img.youtube.com/vi/3krFFQ0mCoo/0.jpg)](http://www.youtube.com/watch?v=3krFFQ0mCoo "pipeline demonstration")
