@@ -31,18 +31,13 @@ We want to choose what structure we want to use for the CI/CD pipeline:
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: "Super-Linter", because
+* It is more easier to use.
 
+Chosen option: "Jest", because 
+* it is well documented.
 
-### [option 1]
+Chosen option: "JSDocs", because 
+* 
 
-[example | description | pointer to more information | …] <!-- optional -->
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-
-
-
+Chosen option: "Mdcss", because 
