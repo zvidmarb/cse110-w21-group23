@@ -16,8 +16,8 @@ jobs:
         uses: andstor/jsdoc-action@v1
         with:
           # build docs from /source
-          source_dir: ./source
+          source_dir: /source
           recurse: true
           # build docs into /docs/jsdocs 
-          output_dir: ./docs/jsdocs
+          output_dir: /docs/jsdocs
           front_page: README.md
