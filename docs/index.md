@@ -7,6 +7,10 @@ Our team development philosophy boils down to 4 words:
 
 We don't just write code, we create experiences,. We push out iterative changes as fast as we can without sacrificing code maintainability. Scrappy coding causes teams to waste valuable time clearing up misconceptions and dealing with unweildy code; time which could have been spent making a better product for you. By writing scalable, clean, and iterative improvements to our codebase, we develop with the user as our first priority. 
 
+## CI/CD Pipeline Information and Documentation:
+
+You can find documentation and implementation information about our CI/CD pipeline [here](cicd)!
+
 ## Meet the Team:
 
 [![intro video](http://img.youtube.com/vi/Ak5_j39K70w/0.jpg)](http://www.youtube.com/watch?v=Ak5_j39K70w "Team Intro")
