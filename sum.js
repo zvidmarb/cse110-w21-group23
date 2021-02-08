@@ -4,7 +4,6 @@
  * @param {number} b - The second number to add.
  */
 function sum(a, b) {
-//note that indentation should change after linted
-return a + b;
+  return a + b;
 }
 module.exports = sum;
