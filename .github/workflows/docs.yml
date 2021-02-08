@@ -20,3 +20,4 @@ jobs:
           recurse: true
           # build docs into /docs/jsdocs 
           output_dir: ./docs/jsdocs
+          front_page: README.md
