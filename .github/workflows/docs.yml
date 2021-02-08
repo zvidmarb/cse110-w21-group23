@@ -16,4 +16,6 @@ jobs:
         uses: andstor/jsdoc-action@v1.2.0
         with:
           # build docs from /source
+          source_dir: ./source
           recurse: true
+          output_dir: ./
