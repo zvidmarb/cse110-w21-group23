@@ -5,7 +5,10 @@ Our team development philosophy boils down to 4 words:
 
 **Code Fast, Code Well.**
 
-We don't just write code, we create experiences,. We push out iterative changes as fast as we can without sacrificing code maintainability. Scrappy coding causes teams to waste valuable time clearing up misconceptions and dealing with unweildy code; time which could have been spent making a better product for you. By writing scalable, clean, and iterative improvements to our codebase, we develop with the user as our first priority.
+We don't just write code, we create experiences,. We push out iterative changes as fast as we can without sacrificing code maintainability. Scrappy coding causes teams to waste valuable time clearing up misconceptions and dealing with unweildy code; time which could have been spent making a better product for you. By writing scalable, clean, and iterative improvements to our codebase, we develop with the user as our first priority. 
+
+## Documentation:
+You can find the documentation for our pomo timer [here](jsdocs)!
 
 ## Meet the Team:
 
