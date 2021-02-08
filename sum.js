@@ -3,7 +3,7 @@
  * @param {number} a - The first number to add.
  * @param {number} b - The second number to add.
  */
-function sum(a, b) {
-  return a + b;
+function sum (a, b) {
+  return a + b
 }
-module.exports = sum;
+module.exports = sum
