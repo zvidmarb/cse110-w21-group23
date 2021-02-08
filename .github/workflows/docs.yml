@@ -27,3 +27,4 @@ jobs:
         uses: EndBug/add-and-commit@v7.0.0
         with:
           add: './docs/jsdocs'
+          message: 'automatically updated documentation' 
