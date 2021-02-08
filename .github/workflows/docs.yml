@@ -18,6 +18,3 @@ jobs:
           # build docs from /source
           source_dir: /source
           recurse: true
-          # build docs into /docs/jsdocs 
-          output_dir: /docs/jsdocs
-          front_page: README.md
