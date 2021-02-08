@@ -1,6 +1,6 @@
 ## Documentation:
 
-You can find the documentation for our pomo timer [here](jsdocs)!
+You can find the documentation for our pomo timer [here](../jsdocs)!
 
 ## CI/CD Pipeline: 
 
