@@ -15,7 +15,7 @@ We don't just write code, we create experiences,. We push out iterative changes 
 
 _Team Lead_
 
-<img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/118740838_2809048605983041_8846018679599177586_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=uWmHRv5rK_gAX95EkX0&_nc_ht=scontent-lax3-2.xx&oh=3ed0bb57e0d157801c65669d57e1471a&oe=601BE1F1" alt="Colin Young" width="250" />
+<img src="media/colin.jpg" alt="Colin Young" width="250" />
 
 > Hi! I'm Colin and I'm a 2nd year Computer Science major in Marshall. When I'm not coding, you'll catch me practicing jazz saxophone, building mechanical keyboards, and playing video games. As far as my CS experience goes, I'm currently working on developing tools to help us track the spread of highly infectious diseases using molecular sequence data. Python is where it's at.
 
