@@ -5,14 +5,16 @@
 
 ## Context and Problem Statement
 We want to choose what structure we want to use for the CI/CD pipeline:
-1. code quality via tool  (ex. Codeclimate, Codacy, etc.)
-2. code quality via human review (ex. Pull Requests)
-3. unit tests via automation (ex. Jest, Tape, Ava, Cypress, Mocha/Chai, etc.)*
-4. documentation generation via automation (ex. JSDocs)
+1. linting and code style enforcement (may happen in pipeline and/or in editor)
+2. code quality via tool  (ex. Codeclimate, Codacy, etc.)
+3. code quality via human review (ex. Pull Requests)
+4. unit tests via automation (ex. Jest, Tape, Ava, Cypress, Mocha/Chai, etc.)*
+5. documentation generation via automation (ex. JSDocs)
 
 
 ## Considered Options
-
+* linting and code style enforcement 
+  * Super-Linter
 * Code quality via tool
   * Codeclimate
   * Codacy
@@ -42,9 +44,5 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 * … <!-- numbers of pros and cons can vary -->
 
 
-## Links <!-- optional -->
 
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
 
-<!-- markdownlint-disable-file MD013 -->
