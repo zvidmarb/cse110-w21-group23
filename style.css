@@ -1,64 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@500&display=swap');
 
-body{
-    background-color: #3A7766;
-    font-family: 'Raleway', sans-serif;
-    color: #E7F0E7;
-    font-size: 24px;
+body {
+  background-color: #3a7766;
+  font-family: 'Raleway', sans-serif;
+  color: #e7f0e7;
+  font-size: 24px;
 }
-
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-#timer{
-    font-family: 'Roboto', sans-serif;
-    font-size: 288px;
-    margin-top: 5%;
-    margin-bottom: 0%;
+#timer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 288px;
+  margin-top: 5%;
+  margin-bottom: 0%;
 }
-
-#stop{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    background-color: #56AF97;
-    border: none;
-    color: #E7F0E7;
-    font-size: 48px;
-    padding: 10px 70px 10px 70px;
-    border-radius: 5px;
+#stop {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  background-color: #56af97;
+  border: none;
+  color: #e7f0e7;
+  font-size: 48px;
+  padding: 10px 70px 10px 70px;
+  border-radius: 5px;
 }
-
-#stop:hover{
-    box-shadow: 0px 1px 2px black;
+#stop:hover {
+  box-shadow: 0px 1px 2px black;
 }
-
-#counter{
-    flex-basis: ;
+#bars {
+  flex-basis: 85%;
 }
-
-#bars{
-    flex-basis: 85%;
+#tasks {
+  display: none;
 }
-
-#tasks{
-    display: none;
+#info {
+  display: none;
 }
-
-#info{
-    display: none;
+#settings {
+  display: none;
 }
-
-#settings{
-    display: none;
-}
-
