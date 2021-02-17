@@ -11,6 +11,7 @@
     - at least one unit-test per feature, and have one unit-test for branches and other staff
 - Sprint prep
     -JavaSrcirpt team: divide feature into small pieces
+    
         - button
         - timer
         - Pomo tracking
@@ -20,6 +21,7 @@
         - Task
         - Confirmation(Save for later)
     -CSS: tasks split up
+    
         - Style guide
         - color
         - fonts
