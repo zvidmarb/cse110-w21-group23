@@ -9,7 +9,7 @@
     - CSS: we can change the pomo 1/4
     - CSS: finish the style guid and mock up
     - Do have a few unit test, like check the timer start and end
-- New Discussion
+- Planing for this meeting
     - Do code review
     - Resolve merge conflict
     - Do more unit test
