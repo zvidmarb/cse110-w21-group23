@@ -8,6 +8,9 @@ startButton.onclick = function () {
   changeButtonText();
 };
 
+/**
+ * Changes the text of the buttom from Start to Stop.
+ */
 function changeButtonText() {
   if (startButton.textContent === "Start") {
     startButton.textContent = "Stop";
@@ -24,12 +27,19 @@ var init_minute = parseInt(init_time.slice(0, 2));
 var init_second = parseInt(init_time.slice(3));
 var init_counter = counter.innerHTML;
 
+/**
+ * Starts the timer.
+ */
 function startTimer() {
   const countDownTime =
     new Date().getTime() + init_minute * 60 * 1000 + init_second * 1000;
   x = setInterval(countDown, 1000, countDownTime);
 }
 
+/**
+ * Counts the timer down.
+ * @param {number} countDownTime - The time we will count down. 
+ */
 function countDown(countDownTime) {
   var now = new Date().getTime();
   var difference = countDownTime - now;
@@ -67,7 +77,9 @@ function countDown(countDownTime) {
   }
 }
 
-// reset timer and pomo counter
+/**
+ * Resets Timer and Pomo Counter.
+ */
 function resetTimer() {
   timer.innerHTML = init_time;
   counter.innerHTML = init_counter;
