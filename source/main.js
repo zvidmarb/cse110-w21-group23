@@ -1,8 +1,9 @@
 // main.js
 
-var startButton = document.getElementById("stop");
-var timer = document.getElementById("timer");
-var counter = document.getElementById("counter");
+let startButton = document.getElementById("stop");
+let timer = document.getElementById("timer");
+let counter = document.getElementById("counter");
+let x;
 
 startButton.onclick = function () {
   changeButtonText();
@@ -38,12 +39,12 @@ function startTimer() {
 
 /**
  * Counts the timer down.
- * @param {number} countDownTime - The time we will count down. 
+ * @param {number} countDownTime - The time we will count down.
  */
 function countDown(countDownTime) {
   var now = new Date().getTime();
   var difference = countDownTime - now;
-  console.log(difference);
+  // console.log(difference);
 
   // a bit of hardcode :<
   // notice that difference is always 0~9 smaller
@@ -71,7 +72,7 @@ function countDown(countDownTime) {
 
     // TODO: if prev_count > total_count: change color of the task color
 
-    // TODO: enter a short break? or move to the next pomo session?
+    // TODO: enter a short break
 
     // TODO: play a sound
   }
