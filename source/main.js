@@ -39,7 +39,7 @@ function startTimer() {
 
 /**
  * Counts the timer down.
- * @param {number} countDownTime - The time we will count down. 
+ * @param {number} countDownTime - The time we will count down.
  */
 function countDown(countDownTime) {
   let now = new Date().getTime();
@@ -72,7 +72,7 @@ function countDown(countDownTime) {
 
     // TODO: if prev_count > total_count: change color of the task color
 
-    // TODO: enter a short break? or move to the next pomo session?
+    // TODO: enter a short break
 
     // TODO: play a sound
   }
