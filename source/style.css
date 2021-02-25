@@ -54,6 +54,6 @@ header {
   display: none;
 }
 
-#settings {
+#settings.hidden {
   display: none;
 }
