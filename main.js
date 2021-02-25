@@ -96,6 +96,15 @@ function countDown(countDownTime) {
       pomoCount += 1;
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
       enterPomo(pomo);
+    } else if (identifier == "long_break") {
+      // TODO: only go over the estimated pomo if task is not finished?
+      identifier = "pomo";
+      pomoCount += 1;
+      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
+      // If go over the limit, highlight the counter in red
+      counter.style.color = "#d00";
+      // TODO: when moving on to the next task, change the color back to white
+      enterPomo(pomo);
     }
   }
 }
@@ -108,6 +117,7 @@ function resetTimer() {
   identifier = "pomo";
   pomoCount = 1;
   counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
+  counter.style.color = "#fff";
   clearInterval(interval);
 }
 
