@@ -13,6 +13,7 @@ test("Ensures the counter is incremented by one after a pomo is complete", (done
   const enterPomo = require("../main");
   var pomoCount = 1;
 
+  // hardcode the pomo duration
   enterPomo("00:02");
   // wait for 5 seconds for the counter to increment
   setTimeout(() => {
