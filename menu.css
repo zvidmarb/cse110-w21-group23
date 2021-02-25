@@ -1,6 +1,6 @@
 /* menu css */
 
-.sideTask {
+.side-task {
     height: 100%;
     width: 0;
     position: fixed;
@@ -13,7 +13,7 @@
     padding-top: 60px;
   }
 
-  .sideTask a {
+  .side-task a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -22,11 +22,11 @@
     transition: 0.3s;
   }
 
-  .sideTask a:hover {
+  .side-task a:hover {
     color: #9e9e9e;
   }
 
-  .sideTask .closebtn {
+  .side-task .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -35,11 +35,11 @@
   }
 
   @media screen and (max-height: 450px) {
-    .sideTask {
+    .side-task {
         padding-top: 15px;
     }
 
-    .sideTask a {
+    .side-task a {
         font-size: 18px;
     }
   }
@@ -48,7 +48,7 @@
 
 /* testing out code */
 /* (background) */
-.infoBox {
+.info-box {
   display: none; 
   position: fixed;
   z-index: 1; 
@@ -62,7 +62,7 @@
 }
 
 /* Info Content Box */
-.Info-Content {
+.info-content {
   background-color: #3a7766;
   margin: 15% auto; 
   padding: 20px;

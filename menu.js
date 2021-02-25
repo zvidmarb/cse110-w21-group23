@@ -2,11 +2,11 @@
 /* Menu js */
 
 function openNav() {
-  document.getElementById("sideTask").style.width = "350px";
+  document.getElementById("side-task").style.width = "350px";
 }
 
 function closeNav() {
-  document.getElementById("sideTask").style.width = "0";
+  document.getElementById("side-task").style.width = "0";
 }
 
 /*Testing out code */
@@ -16,7 +16,7 @@ var info = document.getElementById("info");
 
 // Open info box when the question mark is clicked
 // (We need to set this up with our question mark icon)
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("mybtn");
 btn.onclick = function() {
   info.style.display = "block";
 }
