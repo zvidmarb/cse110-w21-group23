@@ -5,10 +5,10 @@
 
 ### Agenda
 - Weekly Check
-    - StandUp in school day on slcak, and document in github/meeting
-    - Need to meet all agile procedures for credit
-    - Don't need dev branch, feature branch works better in small project
-    - at least one unit-test per feature, and have one unit-test for branches and other staff
+  - StandUp in school day on slcak, and document in github/meeting
+  - Need to meet all agile procedures for credit
+  - Don't need dev branch, feature branch works better in small project
+  - at least one unit-test per feature, and have one unit-test for branches and other staff
 - Sprint prep
     -JavaSrcirpt team: divide feature into small pieces
         - button
@@ -25,7 +25,7 @@
         - fonts
         - flexbox/grid layout
         - Responsive design
-        
+
 - Create issues for each feature(Find those detail in github issues)
 
 
@@ -37,12 +37,12 @@
 ### Decisions Made
 - Time Planning
         - For JavaScript team: Do button/timer, and Pomo counters, Pomo tracking by Next Thursday(Feb 18th)
-        - For CSS team: site layout 
+        - For CSS team: site layout
 
 ## Planning On Next week
     - Separate the tasks in small pieces
     - Talks about opening the sidebar animation, reorder/move tasks around animation
-    
+
 ### Attendance
 - [x] Colin Young
 - [x] Stella Ma
