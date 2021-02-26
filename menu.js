@@ -9,7 +9,7 @@ function closeNav () {
   document.getElementById('side-task').style.width = '0'
 }
 
-// Testing out code 
+// Testing out code
 // Get the info box
 const info = document.getElementById('info')
 
