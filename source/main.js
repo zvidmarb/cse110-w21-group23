@@ -6,11 +6,12 @@ const counter = document.getElementById('counter')
 let interval
 
 // These variables are currently hardcoded, will be changed later when the settings are done.
+// Super-linter forces them to be const... feel free to change them
 let pomoCount = 1
-let totalCount = 4
-let shortBreak = '00:02'
-let longBreak = '00:05'
-let pomo = timer.innerHTML
+const totalCount = 4
+const shortBreak = '00:02'
+const longBreak = '00:05'
+const pomo = timer.innerHTML
 
 startButton.onclick = function () {
   changeButtonText()
@@ -52,7 +53,7 @@ function startTimer () {
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
  */
-function countDown(countDownTime) {
+function countDown (countDownTime) {
   const now = new Date().getTime()
   const difference = countDownTime - now
   console.log(difference)
@@ -154,4 +155,5 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
+return 
 // module.exports = enterPomo;
