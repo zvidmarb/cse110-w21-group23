@@ -11,7 +11,7 @@ let pomoCount = 1
 const totalCount = 4
 const shortBreak = '00:02'
 const longBreak = '00:05'
-const pomo = timer.innerHTML  // this comes directly from the html file
+const pomo = timer.innerHTML // this comes directly from the html file
 
 startButton.onclick = function () {
   changeButtonText()
@@ -55,7 +55,7 @@ function startTimer () {
  */
 function countDown (countDownTime) {
   const now = new Date().getTime()
-  const difference = countDownTime - now  // countDownTime is the time in the future
+  const difference = countDownTime - now // countDownTime is the time in the future
   console.log(difference) // log the current difference
 
   // a bit of hardcode :<
