@@ -6,7 +6,6 @@
 // `;
 //   require("../main.js");
 // });
-
 // test("Ensures the counter is incremented by one after a pomo is complete", (done) => {
 //   const startButton = document.getElementById("stop");
 //   const timer = document.getElementById("timer");
@@ -25,5 +24,5 @@
 // });
 
 test('whatever we want', () => {
-  expect(1).toBe(1);
-});
+  expect(1).toBe(1)
+})
