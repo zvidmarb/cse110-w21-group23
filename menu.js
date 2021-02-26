@@ -1,14 +1,20 @@
 
 // Menu js
 // openNav is considered used here
-function openNav () {
+
+/* eslint-disable */
+function openNav() {
   document.getElementById('side-task').style.width = '350px'
 }
+/* eslint-enable */
 
 // closeNav is considered used here
+
+/* eslint-disable */
 function closeNav () {
   document.getElementById('side-task').style.width = '0'
 }
+/* eslint-enable */
 
 // Testing out code
 // Get the info box
