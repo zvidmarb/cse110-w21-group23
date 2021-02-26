@@ -1,6 +1,10 @@
 
 /* Menu js */
 
+/* exported openNav */
+
+/* exported closeNav */
+
 function openNav () {
   document.getElementById('side-task').style.width = '350px'
 }
