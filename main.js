@@ -155,5 +155,4 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-return 
 // module.exports = enterPomo;
