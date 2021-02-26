@@ -1,16 +1,15 @@
 // main.js
 
-const startButton = document.getElementById("stop");
-const timer = document.getElementById("timer");
-const counter = document.getElementById("counter");
+const startButton = document.getElementById('stop');
+const timer = document.getElementById('timer');
+const counter = document.getElementById('counter');
 let interval;
 
 // These variables are currently hardcoded, will be changed later when the settings are done.
-// keep track of the fraction
 var pomoCount = 1;
 var totalCount = 4;
-var shortBreak = "00:02";
-var longBreak = "00:05";
+var shortBreak = '00:02';
+var longBreak = '00:05';
 var pomo = timer.innerHTML;
 
 startButton.onclick = function () {
@@ -21,11 +20,11 @@ startButton.onclick = function () {
  * Changes the text of the buttom from Start to Stop.
  */
 function changeButtonText() {
-  if (startButton.textContent === "Start") {
-    startButton.textContent = "Stop";
+  if (startButton.textContent === 'Start') {
+    startButton.textContent = 'Stop';
     startTimer();
   } else {
-    startButton.textContent = "Start";
+    startButton.textContent = 'Start';
     resetTimer();
   }
 }
@@ -34,7 +33,7 @@ function changeButtonText() {
 var initTime;
 var initMinute;
 var initSecond;
-var identifier = "pomo";
+var identifier = 'pomo';
 
 /**
  * Starts the timer.
@@ -68,43 +67,40 @@ function countDown(countDownTime) {
 
   // pad a '0' if turning into a single digit
   if (second < 10) {
-    second = "0" + second.toString();
+    second = '0' + second.toString();
   }
   if (minute < 10) {
-    minute = "0" + minute.toString();
+    minute = '0' + minute.toString();
   }
-  timer.innerHTML = minute + ":" + second;
+  timer.innerHTML = minute + ':' + second;
 
   // if timer reaches 00:00
-  if (minute === "00" && second === "00") {
+  if (minute === '00' && second === '00') {
     // stop timer
     clearInterval(interval);
 
     // check identifier
-    if (identifier == "pomo") {
+    if (identifier == 'pomo') {
       if (pomoCount == totalCount) {
-        identifier = "long_break";
+        identifier = 'long_break';
         enterLongBreak();
       } else {
-        identifier = "short_break";
-        // increment counter by 1
-
+        identifier = 'short_break';
         enterShortBreak();
       }
-    } else if (identifier == "short_break") {
-      identifier = "pomo";
+    } else if (identifier == 'short_break') {
+      identifier = 'pomo';
+      // increment counter by 1
       pomoCount += 1;
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
-      enterPomo(pomo);
-    } else if (identifier == "long_break") {
+      enterPomo();
+    } else if (identifier == 'long_break') {
       // TODO: only go over the estimated pomo if task is not finished?
-      identifier = "pomo";
-      pomoCount += 1;
+      identifier = 'pomo';
+      pomoCount = 1; // reset timer
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
-      // If go over the limit, highlight the counter in red
-      counter.style.color = "#d00";
       // TODO: when moving on to the next task, change the color back to white
-      enterPomo(pomo);
+      enterPomo();
     }
   }
 }
@@ -114,10 +110,9 @@ function countDown(countDownTime) {
  */
 function resetTimer() {
   timer.innerHTML = pomo;
-  identifier = "pomo";
+  identifier = 'pomo';
   pomoCount = 1;
   counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
-  counter.style.color = "#fff";
   clearInterval(interval);
 }
 
@@ -125,25 +120,40 @@ function resetTimer() {
  * Enter a short break.
  */
 function enterShortBreak() {
-  timer.innerHTML = shortBreak;
-  startTimer();
+  makeZero();
+  setTimeout(() => {
+    timer.innerHTML = shortBreak;
+    startButton.textContent = 'Start';
+  }, 1000);
 }
 
 /**
  * Enter a pomo.
- * Add a paramter for unit testing purpose
  */
-function enterPomo(currPomo) {
-  timer.innerHTML = currPomo;
-  startTimer();
+function enterPomo() {
+  makeZero();
+  setTimeout(() => {
+    timer.innerHTML = pomo;
+    startButton.textContent = 'Start';
+  }, 1000);
 }
 
 /**
  * Enter a long break.
  */
 function enterLongBreak() {
-  timer.innerHTML = longBreak;
-  startTimer();
+  makeZero();
+  setTimeout(() => {
+    timer.innerHTML = longBreak;
+    startButton.textContent = 'Start';
+  }, 1000);
 }
 
-module.exports = enterPomo;
+/**
+ * Make the timer to be 00:00
+ */
+function makeZero() {
+  timer.innerHTML = '00:00';
+}
+
+// module.exports = enterPomo;
