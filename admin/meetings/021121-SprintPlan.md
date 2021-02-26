@@ -3,7 +3,7 @@
 - Location: Zoom
 - Time: Feb 11th 6:30pm
 
-### Agenda
+## Agenda
 - Weekly Check
   - StandUp in school day on slcak, and document in github/meeting
   - Need to meet all agile procedures for credit
