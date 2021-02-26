@@ -1,14 +1,11 @@
 
-/* Menu js */
-
-/* exported openNav */
-
-/* exported closeNav */
-
+// Menu js
+// openNav is considered used here
 function openNav () {
   document.getElementById('side-task').style.width = '350px'
 }
 
+// closeNav is considered used here
 function closeNav () {
   document.getElementById('side-task').style.width = '0'
 }
