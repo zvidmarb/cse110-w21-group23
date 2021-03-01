@@ -15,11 +15,21 @@
     - unit test is **IMPORTANT** , make sure to have at least one unit test for each feature.
 
 ### Action Items
-- Nawwarr
-    - Finish the issue of Focus/Relax indicator in github
-- L.A and Nawwarr
-   - Fix the info box and pull request
+- Nawwar
+   - pull request for focus/relax and button layout changes by Monday 12:00 PM
+- LA
+    - pull request for info box by Wednesday at 12:00 PM
+- Josh and Nawwar
+    - pull request for finished settings menu before Thursday's meeting
+- Benny, Zeven, and LA
+    - pull request for initial task menu before Thursday's meeting
 
+
+## PLEASE have unit tests and JSDoc annotations done, can't have Jordan flame us twice for the same thing
+
+
+10:02
+PLEASE have unit tests and JSDoc annotations done, can't have Jordan flame us twice for the same thing
 ### Decisions Made
 - Decision
     - Choose the first layout in the figma for the layout of info box and setting.
