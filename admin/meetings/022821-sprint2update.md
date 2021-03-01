@@ -1,7 +1,7 @@
 # Meeting Minutes: Group 23
 - Topic: Update on sprint 2 and try to merge some functions to main branch
 - Location: Zoom
-- Time: 2.28 8 p.m
+- Time: 2.28 8 p.m-10 
 
 ### Agenda
 - Follow-Up Discussion (progress updates)
