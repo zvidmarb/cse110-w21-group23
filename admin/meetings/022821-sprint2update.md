@@ -10,7 +10,7 @@
 - New Discussion
     - Settle down the design of task list
     - Settle down the design of info icon, and pomo counter place
-    - Having L.A. and Benny from css team to work on the task list
+    - Having L.A., Zeven, and Benny from css team to work on the task list
     - Have Nawarr and Josh finish up the settings
     - unit test is **IMPORTANT** , make sure to have at least one unit test for each feature.
 
