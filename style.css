@@ -1,29 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@500&display=swap');
 
+html, body{
+  height: 97vh;
+}
+
 body {
   background-color: #3a7766;
   font-family: 'Raleway', sans-serif;
   color: #fafaf2;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 0 auto;
 }
 
 #timer {
   font-family: 'Roboto', sans-serif;
   font-size: 288px;
-  margin-top: 5%;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -43,7 +50,11 @@ header {
 }
 
 #bars {
-  flex-basis: 85%;
+  margin-left: 1%;
+}
+
+#cogs{
+  margin-right: 1%;
 }
 
 #tasks {
@@ -56,4 +67,29 @@ header {
 
 #settings {
   display: none;
+}
+
+.footer{
+  margin-bottom: 0;
+  align-self: flex-end;
+  margin-right: 1%;
+  flex-shrink: 0;
+}
+
+.break-focus{
+  display: flex;
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+#focus{
+  color: #fafaf2;
+  margin-bottom: 0;
+  margin-right: 1%;
+}
+
+#relax{
+  color: rgba(250, 250, 242, 0.2);
+  margin-bottom: 0;
+  margin-left: 1%;
 }
