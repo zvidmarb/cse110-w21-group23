@@ -28,8 +28,6 @@
 ## PLEASE have unit tests and JSDoc annotations done, can't have Jordan flame us twice for the same thing
 
 
-10:02
-PLEASE have unit tests and JSDoc annotations done, can't have Jordan flame us twice for the same thing
 ### Decisions Made
 - Decision
     - Choose the first layout in the figma for the layout of info box and setting.
