@@ -11,7 +11,7 @@
     - Settle down the design of task list
     - Settle down the design of info icon, and pomo counter place
     - Having L.A. and Benny from css team to work on the task list
-    - Have Nawarr and Josh working on the settings
+    - Have Nawarr and Josh finish up the settings
     - unit test is **IMPORTANT** , make sure to have at least one unit test for each feature.
 
 ### Action Items
@@ -22,7 +22,7 @@
 
 ### Decisions Made
 - Decision
-    - Reasoning/Opinions
+    - Choose the first layout in the figma for the layout of info box and setting.
 
 ### Attendance
 - [x] Colin Young
