@@ -3,6 +3,8 @@
 const startButton = document.getElementById('stop')
 const timer = document.getElementById('timer')
 const counter = document.getElementById('counter')
+const focusing = document.getElementById('focus')
+const relaxing = document.getElementById('relax')
 let interval // used for counting down the timer
 
 // These variables are currently hardcoded, will be changed later when the settings are done.
@@ -120,6 +122,8 @@ function resetTimer () {
  */
 function enterShortBreak () {
   makeZero()
+  focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+  relaxing.style.color = '#fafaf2'
   setTimeout(() => {
     timer.innerHTML = shortBreak
     startButton.textContent = 'Start'
@@ -131,6 +135,8 @@ function enterShortBreak () {
  */
 function enterPomo () {
   makeZero()
+  focusing.style.color = '#fafaf2'
+  relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   setTimeout(() => {
     timer.innerHTML = pomo
     startButton.textContent = 'Start'
@@ -142,6 +148,8 @@ function enterPomo () {
  */
 function enterLongBreak () {
   makeZero()
+  focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+  relaxing.style.color = '#fafaf2'
   setTimeout(() => {
     timer.innerHTML = longBreak
     startButton.textContent = 'Start'
@@ -156,3 +164,4 @@ function makeZero () {
 }
 
 // module.exports = enterPomo;
+module.exports = enterShortBreak
