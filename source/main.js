@@ -3,7 +3,7 @@
 const startButton = document.getElementById('stop')
 const timer = document.getElementById('timer')
 const counter = document.getElementById('counter')
-const settingsButton = document.getElementById('settingsButton')
+const settingsButton = document.getElementById('settings-button')
 const settingsMenu = document.getElementById('settings')
 let settings = {}
 let interval
