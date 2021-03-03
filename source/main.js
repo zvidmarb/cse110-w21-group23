@@ -6,7 +6,7 @@ const counter = document.getElementById('counter')
 const settingsButton = document.getElementById('settings-button')
 const settingsMenu = document.getElementById('settings')
 
-let settings = {}
+const settings = {}
 let interval // used for counting down the timer
 let pomoCount = 1
 
@@ -21,7 +21,7 @@ startButton.onclick = function () {
 }
 
 settingsButton.onclick = function () {
-  settingsMenu.classList.toggle("hidden")
+  settingsMenu.classList.toggle('hidden')
   resetTimer()
 }
 
@@ -39,7 +39,7 @@ function changeButtonText () {
 }
 
 // some initial variables declaration for convenience of future reference
-let initTime = "25:00"
+let initTime = '25:00'
 let initMinute
 let initSecond
 let identifier = 'pomo'
@@ -49,24 +49,23 @@ let identifier = 'pomo'
  */
 function startTimer () {
   // Close the settings menu if you try to start the timer
-  if (!settingsMenu.classList.contains("hidden")) {
-    settingsMenu.classList.toggle("hidden")
+  if (!settingsMenu.classList.contains('hidden')) {
+    settingsMenu.classList.toggle('hidden')
   }
 
-  switch(identifier) {
+  switch (identifier) {
     case 'pomo':
-      initTime = pomo;
-      break;
+      initTime = pomo
+      break
     case 'short_break':
-      initTime = shortBreak;
-      break;
+      initTime = shortBreak
+      break
     case 'long_break':
-      initTime = LongBreak;
-      break;
+      initTime = longBreak
+      break
   }
-  initMinute = parseInt(initTime.slice(0, 2))
-  initSecond = parseInt(initTime.slice(3))
-  
+
+  initMinute = parseInt(initTime.slice(0, 2))  
 
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000
@@ -109,7 +108,7 @@ function countDown (countDownTime) {
       console.log(pomoCount, totalCount)
       // Internally, we increment here. We don't show this until the break is over, though.
       pomoCount += 1
-      if (pomoCount-1 === totalCount) {
+      if (pomoCount - 1 === totalCount) {
         identifier = 'long_break'
         enterLongBreak()
       } else {
@@ -154,11 +153,11 @@ function addSetting (name, title, desc, def, cb) {
   settings[name] = def
 
   // Create the HTML
-  let label = document.createElement("label")
+  const label = document.createElement('label')
   label.setAttribute('for', name)
   label.setAttribute('class', 'setting-label')
   label.textContent = title
-  let input = document.createElement("input")
+  const input = document.createElement('input')
   input.setAttribute('type', 'number')
   input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
@@ -179,9 +178,9 @@ function addSetting (name, title, desc, def, cb) {
 window.onload = function () {
   // Settings
   addSetting(
-    "pomos_before_long_break",
-    "Pomos before long break",
-    "The number of pomos that should be completed before a long break occurs.",
+    'pomos_before_long_break',
+    'Pomos before long break',
+    'The number of pomos that should be completed before a long break occurs.',
     4,
     value => {
       console.log(value)
@@ -189,36 +188,35 @@ window.onload = function () {
     }
   )
   addSetting(
-    "pomo_duration", 
-    "Length of work stage:",
-    "The duration each individual Pomo should be, in minutes.",
+    'pomo_duration', 
+    'Length of work stage:',
+    'The duration each individual Pomo should be, in minutes.',
     25,
     value => {
       console.log(value)
-      pomo = value + ":00"
+      pomo = value + ':00'
     }
   )
   addSetting(
-    "break_short_duration",
-    "Length of short break:",
-    "How long each individual Short Break should be, in minutes.",
+    'break_short_duration',
+    'Length of short break:',
+    'How long each individual Short Break should be, in minutes.',
     5,
     value => {
       console.log(value)
-      shortBreak = value + ":00"
+      shortBreak = value + ':00'
     }
   )
   addSetting(
-    "break_long_duration",
-    "Length of long break:",
-    "The duration each individual Long Break should be, in minutes.",
+    'break_long_duration',
+    'Length of long break:',
+    'The duration each individual Long Break should be, in minutes.',
     30,
     value => {
       console.log(value)
-      longBreak = value + ":00"
+      longBreak = value + ':00'
     }
   )
-
 
   // Load default settings
   for (const setting in settings) {
@@ -275,5 +273,3 @@ function enterLongBreak () {
 function makeZero () {
   timer.innerHTML = '00:00'
 }
-
-// module.exports = enterPomo;
