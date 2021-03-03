@@ -41,7 +41,6 @@ function changeButtonText () {
 // some initial variables declaration for convenience of future reference
 let initTime = '25:00'
 let initMinute
-let initSecond
 let identifier = 'pomo'
 
 /**
@@ -65,7 +64,7 @@ function startTimer () {
       break
   }
 
-  initMinute = parseInt(initTime.slice(0, 2))  
+  initMinute = parseInt(initTime.slice(0, 2))
 
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000
@@ -188,7 +187,7 @@ window.onload = function () {
     }
   )
   addSetting(
-    'pomo_duration', 
+    'pomo_duration',
     'Length of work stage:',
     'The duration each individual Pomo should be, in minutes.',
     25,
