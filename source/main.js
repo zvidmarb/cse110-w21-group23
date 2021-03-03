@@ -111,9 +111,11 @@ function addSetting (name, title, desc, def, cb) {
   // Create the HTML
   let label = document.createElement("label")
   label.setAttribute('for', name)
+  label.setAttribute('class', 'setting-label')
   label.textContent = title
   let input = document.createElement("input")
   input.setAttribute('type', 'number')
+  input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
   settingsMenu.appendChild(label)
@@ -131,18 +133,10 @@ function addSetting (name, title, desc, def, cb) {
 
 window.onload = function () {
   // Settings
-  addSetting(
-    "pomos_before_long_break",
-    "Pomos before long break",
-    "The number of pomos that should be completed before a long break occurs.",
-    4,
-    value => {
-      console.log(value)
-    }
-  )
+  
   addSetting(
     "pomo_duration", 
-    "Pomo duration",
+    "Length of work stage:",
     "The duration each individual Pomo should be, in minutes.",
     25,
     value => {
@@ -152,7 +146,7 @@ window.onload = function () {
   )
   addSetting(
     "break_short_duration",
-    "Short break duration",
+    "Length of short break:",
     "How long each individual Short Break should be, in minutes.",
     5,
     value => {
@@ -161,9 +155,18 @@ window.onload = function () {
   )
   addSetting(
     "break_long_duration",
-    "Long break duration",
+    "Length of long break:",
     "The duration each individual Long Break should be, in minutes.",
     30,
+    value => {
+      console.log(value)
+    }
+  )
+  addSetting(
+    "pomos_before_long_break",
+    "Stages until long break:",
+    "The number of pomos that should be completed before a long break occurs.",
+    4,
     value => {
       console.log(value)
     }
