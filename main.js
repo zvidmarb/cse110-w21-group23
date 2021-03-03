@@ -3,7 +3,7 @@
 const startButton = document.getElementById('stop')
 const timer = document.getElementById('timer')
 const counter = document.getElementById('counter')
-const settingsButton = document.getElementById('settingsButton')
+const settingsButton = document.getElementById('settings-button')
 const settingsMenu = document.getElementById('settings')
 
 let settings = {}
@@ -138,7 +138,7 @@ function resetTimer () {
   identifier = 'pomo'
   pomoCount = 1
   counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
-  enterPomo()
+  startButton.textContent = 'Start'
   clearInterval(interval)
 }
 
@@ -156,9 +156,11 @@ function addSetting (name, title, desc, def, cb) {
   // Create the HTML
   let label = document.createElement("label")
   label.setAttribute('for', name)
+  label.setAttribute('class', 'setting-label')
   label.textContent = title
   let input = document.createElement("input")
   input.setAttribute('type', 'number')
+  input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
   settingsMenu.appendChild(label)
@@ -188,7 +190,7 @@ window.onload = function () {
   )
   addSetting(
     "pomo_duration", 
-    "Pomo duration",
+    "Length of work stage:",
     "The duration each individual Pomo should be, in minutes.",
     25,
     value => {
@@ -198,7 +200,7 @@ window.onload = function () {
   )
   addSetting(
     "break_short_duration",
-    "Short break duration",
+    "Length of short break:",
     "How long each individual Short Break should be, in minutes.",
     5,
     value => {
@@ -208,7 +210,7 @@ window.onload = function () {
   )
   addSetting(
     "break_long_duration",
-    "Long break duration",
+    "Length of long break:",
     "The duration each individual Long Break should be, in minutes.",
     30,
     value => {
