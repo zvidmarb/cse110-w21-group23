@@ -4,6 +4,7 @@
 
 /* eslint-disable */
 function openNav() {
+  document.getElementById('taskbar').style.display = 'block'
   document.getElementById('taskbar').style.width = '350px'
 }
 /* eslint-enable */
@@ -13,5 +14,6 @@ function openNav() {
 /* eslint-disable */
 function closeNav () {
   document.getElementById('taskbar').style.width = '0'
+  document.getElementById('taskbar').style.display = 'none'
 }
 /* eslint-enable */
