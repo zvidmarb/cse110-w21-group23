@@ -3,14 +3,22 @@
 const startButton = document.getElementById('stop')
 const timer = document.getElementById('timer')
 const counter = document.getElementById('counter')
-let interval
+let interval // used for counting down the timer
+
+// These variables are currently hardcoded, will be changed later when the settings are done.
+// Super-linter forces them to be const... feel free to change them later
+let pomoCount = 1
+const totalCount = 4
+const shortBreak = '00:02'
+const longBreak = '00:05'
+const pomo = timer.innerHTML // this comes directly from the html file
 
 startButton.onclick = function () {
   changeButtonText()
 }
 
 /**
- * Changes the text of the buttom from Start to Stop.
+ * Change the button text between Start/Stop
  */
 function changeButtonText () {
   if (startButton.textContent === 'Start') {
@@ -22,16 +30,20 @@ function changeButtonText () {
   }
 }
 
-// some initial variables for convenience of future reference
-const initTime = timer.innerHTML
-const initMinute = parseInt(initTime.slice(0, 2))
-const initSecond = parseInt(initTime.slice(3))
-const initCounter = counter.innerHTML
+// some initial variables declaration for convenience of future reference
+let initTime
+let initMinute
+let initSecond
+let identifier = 'pomo'
 
 /**
- * Starts the timer.
+ * Grab the time from the timer and start to count down.
  */
 function startTimer () {
+  initTime = timer.innerHTML
+  initMinute = parseInt(initTime.slice(0, 2))
+  initSecond = parseInt(initTime.slice(3))
+
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000 + initSecond * 1000
   interval = setInterval(countDown, 1000, countDownTime)
@@ -43,14 +55,16 @@ function startTimer () {
  */
 function countDown (countDownTime) {
   const now = new Date().getTime()
-  const difference = countDownTime - now
-  console.log(difference)
+  const difference = countDownTime - now // countDownTime is the time in the future
+  console.log(difference) // log the current difference
 
   // a bit of hardcode :<
-  // notice that difference is always 0~9 smaller
-  // ex. difference of 9000 becomes 8995.
-  let minute = Math.floor(((difference + 10) % (1000 * 60 * 60)) / (1000 * 60))
-  let second = Math.floor(((difference + 10) % (1000 * 60)) / 1000)
+  // notice that most of the time the difference is 0~9ms smaller
+  // ex. difference of 9000ms becomes 8995ms. This can be seen in the log.
+  // Sometime javascipts goes crazy and 9000ms might become 8480ms...
+  // So you might see the timer skip numbers...
+  let minute = Math.floor(((difference + 500) % (1000 * 60 * 60)) / (1000 * 60))
+  let second = Math.floor(((difference + 500) % (1000 * 60)) / 1000)
 
   // pad a '0' if turning into a single digit
   if (second < 10) {
@@ -66,15 +80,27 @@ function countDown (countDownTime) {
     // stop timer
     clearInterval(interval)
 
-    // increment counter by 1
-    const prevCount = parseInt(counter.innerHTML.slice(0, 1))
-    counter.innerHTML = prevCount + 1 + counter.innerHTML.slice(1)
-
-    // TODO: if prevCount > total_count: change color of the task color
-
-    // TODO: enter a short break
-
-    // TODO: play a sound
+    // check identifier
+    if (identifier === 'pomo') {
+      if (pomoCount === totalCount) {
+        identifier = 'long_break'
+        enterLongBreak()
+      } else {
+        identifier = 'short_break'
+        enterShortBreak()
+      }
+    } else if (identifier === 'short_break') {
+      identifier = 'pomo'
+      // increment counter by 1 after short break
+      pomoCount += 1
+      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+      enterPomo()
+    } else if (identifier === 'long_break') {
+      identifier = 'pomo'
+      pomoCount = 1 // reset pomo after long break
+      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+      enterPomo()
+    }
   }
 }
 
@@ -82,7 +108,51 @@ function countDown (countDownTime) {
  * Resets Timer and Pomo Counter.
  */
 function resetTimer () {
-  timer.innerHTML = initTime
-  counter.innerHTML = initCounter
+  timer.innerHTML = pomo
+  identifier = 'pomo'
+  pomoCount = 1
+  counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
   clearInterval(interval)
 }
+
+/**
+ * Enter a short break.
+ */
+function enterShortBreak () {
+  makeZero()
+  setTimeout(() => {
+    timer.innerHTML = shortBreak
+    startButton.textContent = 'Start'
+  }, 1000)
+}
+
+/**
+ * Enter a pomo.
+ */
+function enterPomo () {
+  makeZero()
+  setTimeout(() => {
+    timer.innerHTML = pomo
+    startButton.textContent = 'Start'
+  }, 1000)
+}
+
+/**
+ * Enter a long break.
+ */
+function enterLongBreak () {
+  makeZero()
+  setTimeout(() => {
+    timer.innerHTML = longBreak
+    startButton.textContent = 'Start'
+  }, 1000)
+}
+
+/**
+ * Make the timer to be 00:00
+ */
+function makeZero () {
+  timer.innerHTML = '00:00'
+}
+
+// module.exports = enterPomo;
