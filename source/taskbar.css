@@ -1,21 +1,22 @@
 
-/* menu css */
+/* taskbar css */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@500&display=swap');
 
-.taskbar {
+#taskbar {
   height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #56af97;
+  background-color: #fafaf2;
+  color: #1F3029;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
 
-.taskbar a {
+#taskbar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -24,24 +25,30 @@
   transition: 0.3s;
 }
 
-.taskbar a:hover {
+#taskbar a:hover {
   color: #9e9e9e;
 }
 
-.taskbar .closebtn {
-  position: absolute;
+#taskbar .close{
+  position: inherit;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
 
+#taskbar > ol {
+  list-style-type: none;
+}
+
+
 @media screen and (max-height: 450px) {
-  .taskbar {
+  #taskbar {
     padding-top: 15px;
   }
 
-  .taskbar a {
+  #taskbar a {
     font-size: 18px;
   }
 }
+
