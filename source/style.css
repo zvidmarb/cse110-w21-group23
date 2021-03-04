@@ -46,32 +46,6 @@ header {
   flex-basis: 85%;
 }
 
-#tasklist {
-  display: none;
-}
-
-#taskbar {
-  display: none;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #56af97;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-#taskbar .close {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
 #info {
   display: none;
 }
@@ -81,24 +55,13 @@ header {
 }
 
 
-/* Below are for tasklist */
-
-/* the li element */
-.task {
-  display:flex;
+.popup-header {
+  background-color: #56AF97 !important;
+  color: #fafaf2 !important;
+  display: flex;
   flex-direction: row;
-  align-items: center
-}
-
-/* the p element*/
-.taskLabel {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.deleteIcon {
-  font-size: 40px;
-  float: right;
-  position: absolute; 
-  right: 30px
+  justify-content: space-between;
+  top: 0;
+  position: absolute;
+  width: 100%;
 }

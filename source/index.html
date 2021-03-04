@@ -5,8 +5,7 @@
   <title>Pomo Timer</title>
   <script src="https://kit.fontawesome.com/f22b02c97a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
-  <!-- <link rel="stylesheet" href="sidetask.css" /> -->
-  <!-- <script src="sidetask.js" defer></script> -->
+  <link rel="stylesheet" href="taskbar.css" />
 </head>
 
 <body>
@@ -59,18 +58,18 @@
   <!-- Task Menu -->
   <div id="taskbar">
 
-    <div id="task-header">
+    <div id="task-header" class="popup-header">
       <p>Tasks</p>
       <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
     </div>
 
-    <ul id="ongoing-tasks">
+    <ol id="ongoing-tasks">
       <!-- Sample task -->
 
       <!--<input type="checkbox" class="task-check" name="task" />
           <label for="task" class="task-title">Task you want to complete</label>
           <a href="javascript:void(0)" class="delete" onclick="deleteTask()">&times;</a>-->
-    </ul>
+    </ol>
 
     <button id="plus">+</button>
 
@@ -78,13 +77,11 @@
       <p>Completed Tasks</p>
     </div>
 
-    <ul id="completed-tasks">
-      <li>
-        <!--<input type="checkbox" class="task-check" name="task" />
-            <label for="task" class="task-title">Task you want to complete</label>
-            <i class="fas fa-times"></i>-->
-      </li>
-    </ul>
+    <ol id="completed-tasks">
+      <!--<input type="checkbox" class="task-check" name="task" />
+          <label for="task" class="task-title">Task you want to complete</label>
+           <i class="fas fa-times"></i>-->
+    </ol>
 
   </div>
 
@@ -112,7 +109,6 @@
 
   <script src="main.js"></script>
   <script src="taskbar.js"></script>
-  <script src="tasklist.js"></script>
   <script src="task-item.js"></script>
 </body>
 
