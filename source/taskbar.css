@@ -52,3 +52,31 @@
   }
 }
 
+
+/* the li element */
+.task {
+  display:flex;
+  flex-direction: row;
+  align-items: center
+}
+
+/* the p element*/
+.taskLabel {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.deleteIcon {
+  font-size: 40px;
+  float: right;
+  position: absolute; 
+  right: 30px;
+  text-decoration: none;
+  color: black
+}
+
+.task a:hover {
+  color: #9e9e9e;
+  transition: 0.3s;
+}
+
