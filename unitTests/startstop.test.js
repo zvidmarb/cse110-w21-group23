@@ -1,10 +1,8 @@
 beforeAll(() => {
   document.body.innerHTML = `
-  <p id='counter'>Pomo: 1&frasl;4</p>
-<h1 id='timer'>00:07</h1>
-<button id='stop'>Start</button>
-<h2 id="focus">Focus</h2>
-<h2 id="relax">Relax</h2>
+    <p id='counter'>Pomo: 1&frasl;4</p>
+    <h1 id='timer'>00:07</h1>
+    <button id='stop'>Start</button>
 `
   require('../main.js')
 })
