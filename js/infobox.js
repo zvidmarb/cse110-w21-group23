@@ -1,5 +1,3 @@
-
-
 // Testing out code
 // Get the info box
 const info = document.getElementById('info')
