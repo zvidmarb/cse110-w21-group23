@@ -28,7 +28,7 @@ function changeButtonText () {
     if (identifier === 'pomo') {
       focusing.style.color = '#fafaf2'
       relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
-    } else{
+    } else {
       focusing.style.color = 'rgba(250, 250, 242, 0.2)'
       relaxing.style.color = '#fafaf2'
     }
