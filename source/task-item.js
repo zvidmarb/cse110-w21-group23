@@ -1,8 +1,13 @@
 // task-item.js
 
-/* one parameter: the name of the task */
+/**
+ * Three parameters: 
+ * - The name/label of the task
+ * - The location of the task
+ * - whether the task can be deleted
+ */
 class TaskItem extends HTMLElement {
-  constructor(taskName) {
+  constructor(taskName, location, canDelete) {
     super()
 
     this.setAttribute("class", 'task-item') // for css purpose, maybe we don't need it
@@ -18,6 +23,13 @@ class TaskItem extends HTMLElement {
     let checkbox = document.createElement("input")
     checkbox.setAttribute("class", "checkbox")
     checkbox.setAttribute("type", "checkbox")
+    if (location === "ongoing") {
+      checkbox.addEventListener('change', checkToComplete)
+    } else if (location === "completed") {
+      checkbox.checked = true
+    } else if (location === "topTask") {
+      checkbox.addEventListener('change', removeTopTask)
+    }
 
     // create task paragraph
     let taskLabel = document.createElement("p")
@@ -27,13 +39,14 @@ class TaskItem extends HTMLElement {
     // create the delete icon
     let deleteIcon = document.createElement("a")
     deleteIcon.setAttribute("class", "deleteIcon")
+    deleteIcon.setAttribute('href', "javascript:void(0)")
     deleteIcon.addEventListener('click', deleteTask)
-    deleteIcon.innerHTML = `&times`
+    deleteIcon.innerHTML = `&times` 
 
     // Apply external styles to the shadow dom
     const linkElem = document.createElement("link")
     linkElem.setAttribute("rel", "stylesheet");
-    linkElem.setAttribute("href", "./style.css")
+    linkElem.setAttribute("href", "./taskbar.css")
 
     // Attach the created element to the shadow dom
     shadow.appendChild(linkElem);
@@ -42,8 +55,12 @@ class TaskItem extends HTMLElement {
     shadow.appendChild(wrapper)
     wrapper.appendChild(checkbox)
     wrapper.appendChild(taskLabel)
-    wrapper.appendChild(deleteIcon)
+    if (canDelete === true) {
+      wrapper.appendChild(deleteIcon)
+    }
   }
 }
 
 customElements.define("task-item", TaskItem);
+
+module.exports = {TaskItem}
