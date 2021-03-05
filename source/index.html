@@ -18,15 +18,10 @@
     <header>
       <!--Hamburger-->
       <i id="bars" class="fas fa-bars"></i>
-
       <!--Counter-->
-      <p id="counter">Pomo: &frac14</p>
-
-      <!--Pomo Info-->
-      <i id="mybtn" class="fas fa-question"></i>
-
+      <p id="counter">Pomo: 1&frasl;4</p>
       <!--Settings-->
-      <i class="fas fa-cog"></i>
+      <i id="cogs" class="fas fa-cog"></i>
     </header>
 
     <!-- Task Menu -->
@@ -45,18 +40,18 @@
         </li>
       </ul>
     </div>
-    
+
     <!-- Info Menu-->
     <!-- The Info Box -->
     <div id="info" class="info-box">
-        <div class="info-content">
-            <!-- Close the Box-->
-            <span class="close">&times;</span>
-            <h2>How to use the app!</h2>
-            <p>Something something something lorem ipsem.</p>
-        </div>
+      <div class="info-content">
+        <!-- Close the Box-->
+        <span class="close">&times;</span>
+        <h2>How to use the app!</h2>
+        <p>Something something something lorem ipsem.</p>
+      </div>
     </div>
-   
+
     <!--Settings Menu -->
     <div id="settings">
       <h2>Settings</h2>
@@ -65,12 +60,22 @@
     </div>
     <!--Main Content-->
     <div class="content">
-        <!--Timer-->
-        <h1 id="timer">00:04</h1>
-        <!--Button-->
-        <button id="stop">Start</button>
-        <!--Current Task-->
-        <p id="current-task">No tasks stored!</p>
+      <!--Break or focus indicator-->
+      <div class="break-focus">
+        <h2 id="focus">Focus</h2>
+        <h2 id="relax">Relax</h2>
+      </div>
+      <!--Timer-->
+      <h1 id="timer">00:04</h1>
+      <!--Button-->
+      <button id="stop">Start</button>
+      <!--Current Task-->
+      <p id="current-task">No tasks stored!</p>
     </div>
+    <footer class="footer">
+      <!--Pomo Info-->
+      <i id="mybtn" class="fas fa-question"></i>
+    </footer>
+    <script src="main.js"></script>
   </body>
 </html>
