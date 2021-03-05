@@ -31,7 +31,6 @@ close.onclick = function () {
  */ 
 window.onclick = function (event) {
   if (event.target === info) {
-    info.style.display = 'none'
+    info.style.display = "none";
   }
-}
-
+};
