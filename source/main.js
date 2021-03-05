@@ -114,6 +114,8 @@ function resetTimer () {
   identifier = 'pomo'
   pomoCount = 1
   counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+  focusing.style.color = '#fafaf2'
+  relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   clearInterval(interval)
 }
 
