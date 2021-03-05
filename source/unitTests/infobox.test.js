@@ -11,22 +11,21 @@ beforeAll(() => {
           <p>Something something something lorem ipsem.</p>
       </div>
     </div>
-`;
-  require("../js/infobox.js");
-});
+`
+  require('../js/infobox.js')
+})
 
 describe('Test if block active when it is clicked', () => {
-    test('Click is working', () => {
-      const btn = document.getElementById('mybtn')
-      const info = document.getElementById("info")
-      const close = document.getElementsByClassName("close")[0]
-      
-      //const closeInfo = require("../js/infobox.js")
-      btn.click()
-      expect(info.style.display).toBe('block')
-      close.click()
-      expect(info.style.display).toBe('none')
-      btn.click()
-      expect(info.style.display).toBe("block")
-    })
+  test('Click is working', () => {
+    const btn = document.getElementById('mybtn')
+    const info = document.getElementById('info')
+    const close = document.getElementsByClassName('close')[0]
+    // const closeInfo = require("../js/infobox.js")
+    btn.click()
+    expect(info.style.display).toBe('block')
+    close.click()
+    expect(info.style.display).toBe('none')
+    btn.click()
+    expect(info.style.display).toBe('block')
+  })
 })
