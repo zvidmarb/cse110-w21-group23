@@ -28,9 +28,9 @@ close.onclick = function () {
 /**
  *  Close the Info Box if we click anywhere else on the page
  *  @return void
- */ 
+ */
 window.onclick = function (event) {
   if (event.target === info) {
-    info.style.display = "none";
+    info.style.display = 'none'
   }
-};
+}
