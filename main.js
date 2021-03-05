@@ -34,7 +34,7 @@ function changeButtonText () {
 let initTime
 let initMinute
 let initSecond
-let identifier = 'pomo'
+let identifier = 'pomo' // default identifier as 'pomo'
 
 /**
  * Grab the time from the timer and start to count down.
@@ -89,18 +89,9 @@ function countDown (countDownTime) {
         identifier = 'short_break'
         enterShortBreak()
       }
-    } else if (identifier === 'short_break') {
-      identifier = 'pomo'
-      // increment counter by 1 after short break
-      pomoCount += 1
-      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+    } else if (identifier === 'short_break' || identifier === 'long_break') {
       enterPomo()
-    } else if (identifier === 'long_break') {
-      identifier = 'pomo'
-      pomoCount = 1 // reset pomo after long break
-      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
-      enterPomo()
-    }
+    } 
   }
 }
 
@@ -134,6 +125,16 @@ function enterPomo () {
   setTimeout(() => {
     timer.innerHTML = pomo
     startButton.textContent = 'Start'
+
+    if (identifier === 'short_break') {
+      // increment counter by 1 after short break
+      pomoCount += 1
+    } else if (identifier === 'long_break') {
+      // reset pomo counter after long break
+      pomoCount = 1 
+    }
+    counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+    identifier = 'pomo'
   }, 1000)
 }
 
