@@ -25,13 +25,6 @@ startButton.onclick = function () {
 function changeButtonText () {
   if (startButton.textContent === 'Start') {
     startButton.textContent = 'Stop'
-    if (identifier === 'pomo') {
-      focusing.style.color = '#fafaf2'
-      relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
-    } else {
-      focusing.style.color = 'rgba(250, 250, 242, 0.2)'
-      relaxing.style.color = '#fafaf2'
-    }
     startTimer()
   } else {
     startButton.textContent = 'Start'
@@ -132,6 +125,8 @@ function enterShortBreak () {
   setTimeout(() => {
     timer.innerHTML = shortBreak
     startButton.textContent = 'Start'
+    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+    relaxing.style.color = '#fafaf2'
   }, 1000)
 }
 
@@ -143,6 +138,8 @@ function enterPomo () {
   setTimeout(() => {
     timer.innerHTML = pomo
     startButton.textContent = 'Start'
+    focusing.style.color = '#fafaf2'
+    relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   }, 1000)
 }
 
@@ -154,6 +151,8 @@ function enterLongBreak () {
   setTimeout(() => {
     timer.innerHTML = longBreak
     startButton.textContent = 'Start'
+    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+    relaxing.style.color = '#fafaf2'
   }, 1000)
 }
 
