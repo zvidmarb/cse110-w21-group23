@@ -22,17 +22,10 @@ startButton.onclick = function () {
 /**
  * Change the button text between Start/Stop
  */
-<<<<<<< HEAD
-function changeButtonText () {
-  if (startButton.textContent === 'Start') {
-    startButton.textContent = 'Stop'
-    startTimer()
-=======
 function changeButtonText() {
   if (startButton.textContent === "Start") {
     startButton.textContent = "Stop";
     startTimer();
->>>>>>> ed0aa809c77eabe1b8bb2cd7fe5ab2a7dd2505d3
   } else {
     startButton.textContent = "Start";
     resetTimer();
@@ -109,16 +102,6 @@ function countDown(countDownTime) {
 /**
  * Resets Timer and Pomo Counter.
  */
-<<<<<<< HEAD
-function resetTimer () {
-  timer.innerHTML = pomo
-  identifier = 'pomo'
-  pomoCount = 1
-  counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
-  focusing.style.color = '#fafaf2'
-  relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
-  clearInterval(interval)
-=======
 function resetTimer() {
   focusing.style.color = "#fafaf2";
   relaxing.style.color = "rgba(250, 250, 242, 0.2)";
@@ -127,7 +110,6 @@ function resetTimer() {
   pomoCount = 1;
   counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
   clearInterval(interval);
->>>>>>> ed0aa809c77eabe1b8bb2cd7fe5ab2a7dd2505d3
 }
 
 /**
@@ -136,19 +118,11 @@ function resetTimer() {
 function enterShortBreak() {
   makeZero();
   setTimeout(() => {
-<<<<<<< HEAD
-    timer.innerHTML = shortBreak
-    startButton.textContent = 'Start'
-    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
-    relaxing.style.color = '#fafaf2'
-  }, 1000)
-=======
     timer.innerHTML = shortBreak;
     startButton.textContent = "Start";
     focusing.style.color = "rgba(250, 250, 242, 0.2)";
     relaxing.style.color = "#fafaf2";
   }, 1000);
->>>>>>> ed0aa809c77eabe1b8bb2cd7fe5ab2a7dd2505d3
 }
 
 /**
@@ -159,11 +133,6 @@ function enterPomo() {
   setTimeout(() => {
     timer.innerHTML = pomo
     startButton.textContent = 'Start'
-<<<<<<< HEAD
-    focusing.style.color = '#fafaf2'
-    relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
-  }, 1000)
-=======
 
     if (identifier === 'short_break') {
       // increment counter by 1 after short break
@@ -180,7 +149,6 @@ function enterPomo() {
     focusing.style.color = "#fafaf2";
     relaxing.style.color = "rgba(250, 250, 242, 0.2)";
   }, 1000);
->>>>>>> ed0aa809c77eabe1b8bb2cd7fe5ab2a7dd2505d3
 }
 
 /**
@@ -189,19 +157,11 @@ function enterPomo() {
 function enterLongBreak() {
   makeZero();
   setTimeout(() => {
-<<<<<<< HEAD
-    timer.innerHTML = longBreak
-    startButton.textContent = 'Start'
-    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
-    relaxing.style.color = '#fafaf2'
-  }, 1000)
-=======
     timer.innerHTML = longBreak;
     startButton.textContent = "Start";
     focusing.style.color = "rgba(250, 250, 242, 0.2)";
     relaxing.style.color = "#fafaf2";
   }, 1000);
->>>>>>> ed0aa809c77eabe1b8bb2cd7fe5ab2a7dd2505d3
 }
 
 /**
