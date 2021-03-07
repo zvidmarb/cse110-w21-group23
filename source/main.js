@@ -22,7 +22,7 @@ startButton.onclick = function () {
 /**
  * Change the button text between Start/Stop
  */
-function changeButtonText() {
+function changeButtonText () {
   if (startButton.textContent === 'Start') {
     startButton.textContent = 'Stop'
     startTimer()
@@ -41,7 +41,7 @@ let identifier = 'pomo' // default identifier as 'pomo'
 /**
  * Grab the time from the timer and start to count down.
  */
-function startTimer() {
+function startTimer () {
   initTime = timer.innerHTML
   initMinute = parseInt(initTime.slice(0, 2))
   initSecond = parseInt(initTime.slice(3))
@@ -55,7 +55,7 @@ function startTimer() {
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
  */
-function countDown(countDownTime) {
+function countDown (countDownTime) {
   const now = new Date().getTime()
   const difference = countDownTime - now // countDownTime is the time in the future
   console.log(difference) // log the current difference
@@ -95,14 +95,14 @@ function countDown(countDownTime) {
       }
     } else if (identifier === 'short_break' || identifier === 'long_break') {
       enterPomo()
-    } 
+    }
   }
 }
 
 /**
  * Resets Timer and Pomo Counter.
  */
-function resetTimer() {
+function resetTimer () {
   focusing.style.color = '#fafaf2'
   relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   timer.innerHTML = pomo
@@ -115,7 +115,7 @@ function resetTimer() {
 /**
  * Enter a short break.
  */
-function enterShortBreak() {
+function enterShortBreak () {
   makeZero()
   setTimeout(() => {
     timer.innerHTML = shortBreak
@@ -128,7 +128,7 @@ function enterShortBreak() {
 /**
  * Enter a pomo.
  */
-function enterPomo() {
+function enterPomo () {
   makeZero()
   setTimeout(() => {
     timer.innerHTML = pomo
@@ -139,7 +139,7 @@ function enterPomo() {
       pomoCount += 1
     } else if (identifier === 'long_break') {
       // reset pomo counter after long break
-      pomoCount = 1 
+      pomoCount = 1
     }
     counter.innerHTML = `Pomo: ${pomoCount}&frasl${totalCount}`
     identifier = 'pomo'
@@ -154,7 +154,7 @@ function enterPomo() {
 /**
  * Enter a long break.
  */
-function enterLongBreak() {
+function enterLongBreak () {
   makeZero()
   setTimeout(() => {
     timer.innerHTML = longBreak
@@ -167,7 +167,7 @@ function enterLongBreak() {
 /**
  * Make the timer to be 00:00
  */
-function makeZero() {
+function makeZero () {
   timer.innerHTML = '00:00'
 }
 
