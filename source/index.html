@@ -4,6 +4,9 @@
 <head>
   <title>Pomo Timer</title>
   <script src="https://kit.fontawesome.com/f22b02c97a.js" crossorigin="anonymous"></script>
+  <!-- import the edit icon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- css import -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="./css/infobox.css" />
@@ -16,7 +19,7 @@
 <body>
   <header>
     <!--Hamburger-->
-    <i id="bars" class="fas fa-bars"></i>
+    <i id="bars" class="fas fa-bars" onclick="openNav()"></i>
     <!--Counter-->
     <p id="counter">Pomo: 1&frasl;4</p>
     <!--Settings-->
@@ -27,7 +30,7 @@
   <div id="taskbar">
 
     <div id="task-header" class="popup-header">
-      <p>Tasks</p>
+      <p id="task-header-label">Tasks</p>
       <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
     </div>
 
@@ -35,14 +38,13 @@
       <!-- Sample task -->
 
       <!--<input type="checkbox" class="task-check" name="task" />
-          <label for="task" class="task-title">Task you want to complete</label>
-          <a href="javascript:void(0)" class="delete" onclick="deleteTask()">&times;</a>-->
+          <label for="task" class="task-title">Task you want to complete</label>-->
     </ol>
 
-    <button id="plus">+</button>
+    <button id='plus'>+</button>
 
     <div id="completed-header">
-      <p>Completed Tasks</p>
+      <p id="completed-header-label">Completed Tasks</p>
     </div>
 
     <ol id="completed-tasks">
@@ -58,7 +60,7 @@
   <div id="info" class="info-box">
     <div class="info-content">
       <!-- Close the Box-->
-      <span class="close">&times;</span>
+      <span id="infoClose" class="close">&times;</span>
       <h2>How to use the app!</h2>
       <p>Something something something lorem ipsem.</p>
     </div>

@@ -34,6 +34,7 @@ class TaskItem extends HTMLElement {
     // create task paragraph
     let taskLabel = document.createElement("p")
     taskLabel.setAttribute("class", "taskLabel")
+    taskLabel.setAttribute('contenteditable', 'true')
     taskLabel.textContent = taskName;
 
     // create the delete icon
@@ -63,4 +64,4 @@ class TaskItem extends HTMLElement {
 
 customElements.define("task-item", TaskItem);
 
-module.exports = {TaskItem}
+// module.exports = {TaskItem}

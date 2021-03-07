@@ -6,9 +6,9 @@ beforeAll(() => {
     <i id="mybtn" class="fas fa-question"></i>
     <div id="info" class="info-box">
       <div class="info-content">
-          <span class="close">&times;</span>
-          <h2>How to use the app!</h2>
-          <p>Something something something lorem ipsem.</p>
+        <span id="infoClose" class="close">&times;</span>
+        <h2>How to use the app!</h2>
+        <p>Something something something lorem ipsem.</p>
       </div>
     </div>
 `
@@ -19,8 +19,7 @@ describe('Test if block active when it is clicked', () => {
   test('Click is working', () => {
     const btn = document.getElementById('mybtn')
     const info = document.getElementById('info')
-    const close = document.getElementsByClassName('close')[0]
-    // const closeInfo = require("../js/infobox.js")
+    const close = document.getElementById('infoClose')
     btn.click()
     expect(info.style.display).toBe('block')
     close.click()
