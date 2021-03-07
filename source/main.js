@@ -1,18 +1,18 @@
 // main.js
 
-const startButton = document.getElementById("stop")
-const timer = document.getElementById("timer")
-const counter = document.getElementById("counter")
-const focusing = document.getElementById("focus")
-const relaxing = document.getElementById("relax")
+const startButton = document.getElementById('stop')
+const timer = document.getElementById('timer')
+const counter = document.getElementById('counter')
+const focusing = document.getElementById('focus')
+const relaxing = document.getElementById('relax')
 let interval // used for counting down the timer
 
 // These variables are currently hardcoded, will be changed later when the settings are done.
 // Super-linter forces them to be const... feel free to change them later
 let pomoCount = 1
 const totalCount = 4
-const shortBreak = "00:02"
-const longBreak = "00:05"
+const shortBreak = '00:02'
+const longBreak = '00:05'
 const pomo = timer.innerHTML // this comes directly from the html file
 
 startButton.onclick = function () {
@@ -23,11 +23,11 @@ startButton.onclick = function () {
  * Change the button text between Start/Stop
  */
 function changeButtonText() {
-  if (startButton.textContent === "Start") {
-    startButton.textContent = "Stop"
+  if (startButton.textContent === 'Start') {
+    startButton.textContent = 'Stop'
     startTimer()
   } else {
-    startButton.textContent = "Start"
+    startButton.textContent = 'Start'
     resetTimer()
   }
 }
@@ -72,25 +72,25 @@ function countDown(countDownTime) {
 
   // pad a '0' if turning into a single digit
   if (second < 10) {
-    second = "0" + second.toString()
+    second = '0' + second.toString()
   }
   if (minute < 10) {
-    minute = "0" + minute.toString()
+    minute = '0' + minute.toString()
   }
-  timer.innerHTML = minute + ":" + second
+  timer.innerHTML = minute + ':' + second
 
   // if timer reaches 00:00
-  if (minute === "00" && second === "00") {
+  if (minute === '00' && second === '00') {
     // stop timer
     clearInterval(interval)
 
     // check identifier
-    if (identifier === "pomo") {
+    if (identifier === 'pomo') {
       if (pomoCount === totalCount) {
-        identifier = "long_break"
+        identifier = 'long_break'
         enterLongBreak()
       } else {
-        identifier = "short_break"
+        identifier = 'short_break'
         enterShortBreak()
       }
     } else if (identifier === 'short_break' || identifier === 'long_break') {
@@ -103,10 +103,10 @@ function countDown(countDownTime) {
  * Resets Timer and Pomo Counter.
  */
 function resetTimer() {
-  focusing.style.color = "#fafaf2"
-  relaxing.style.color = "rgba(250, 250, 242, 0.2)"
+  focusing.style.color = '#fafaf2'
+  relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   timer.innerHTML = pomo
-  identifier = "pomo"
+  identifier = 'pomo'
   pomoCount = 1
   counter.innerHTML = `Pomo: ${pomoCount}&frasl${totalCount}`
   clearInterval(interval)
@@ -119,9 +119,9 @@ function enterShortBreak() {
   makeZero()
   setTimeout(() => {
     timer.innerHTML = shortBreak
-    startButton.textContent = "Start"
-    focusing.style.color = "rgba(250, 250, 242, 0.2)"
-    relaxing.style.color = "#fafaf2"
+    startButton.textContent = 'Start'
+    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+    relaxing.style.color = '#fafaf2'
   }, 1000)
 }
 
@@ -145,9 +145,9 @@ function enterPomo() {
     identifier = 'pomo'
 
     timer.innerHTML = pomo
-    startButton.textContent = "Start"
-    focusing.style.color = "#fafaf2"
-    relaxing.style.color = "rgba(250, 250, 242, 0.2)"
+    startButton.textContent = 'Start'
+    focusing.style.color = '#fafaf2'
+    relaxing.style.color = 'rgba(250, 250, 242, 0.2)'
   }, 1000)
 }
 
@@ -158,9 +158,9 @@ function enterLongBreak() {
   makeZero()
   setTimeout(() => {
     timer.innerHTML = longBreak
-    startButton.textContent = "Start"
-    focusing.style.color = "rgba(250, 250, 242, 0.2)"
-    relaxing.style.color = "#fafaf2"
+    startButton.textContent = 'Start'
+    focusing.style.color = 'rgba(250, 250, 242, 0.2)'
+    relaxing.style.color = '#fafaf2'
   }, 1000)
 }
 
@@ -168,7 +168,7 @@ function enterLongBreak() {
  * Make the timer to be 00:00
  */
 function makeZero() {
-  timer.innerHTML = "00:00"
+  timer.innerHTML = '00:00'
 }
 
 // module.exports = enterPomo
