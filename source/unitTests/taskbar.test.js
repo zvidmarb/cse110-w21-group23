@@ -29,9 +29,9 @@ test('a lot of tests', () => {
   let currentTask = document.getElementById('current-task') // the top task
 
   openNav()
-  expect(document.getElementById('taskbar').style.width).toBe('350px')
+  expect(document.getElementById('taskbar').style.display).toBe('flex')
   closeNav()
-  expect(document.getElementById('taskbar').style.width).toBe('0px')
+  expect(document.getElementById('taskbar').style.display).toBe('none')
   
   addNewTask("quiz")
   var nodes = Array.from( ongoingTasks.children );
