@@ -18,6 +18,11 @@ let shortBreak
 let longBreak
 let pomo
 
+// some initial variables declaration for convenience of future reference
+let initTime = '25:00'
+let initMinute
+let identifier = 'pomo'
+
 startButton.onclick = function () {
   changeButtonText()
 }
@@ -39,11 +44,6 @@ function changeButtonText () {
     resetTimer()
   }
 }
-
-// some initial variables declaration for convenience of future reference
-let initTime = '25:00'
-let initMinute
-let identifier = 'pomo'
 
 /**
  * Grab the time from the timer and start to count down.
