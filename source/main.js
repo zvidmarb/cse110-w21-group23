@@ -171,5 +171,4 @@ function makeZero() {
   timer.innerHTML = "00:00";
 }
 
-// module.exports = enterPomo;
-// module.exports = enterShortBreak;
+module.exports = {enterPomo, enterShortBreak, enterLongBreak};
