@@ -64,6 +64,9 @@ function startTimer () {
     case 'long_break':
       initTime = longBreak
       break
+    default:
+      initTime = pomo
+      break
   }
 
   initMinute = parseInt(initTime.slice(0, 2))
