@@ -5,6 +5,8 @@ const timer = document.getElementById('timer')
 const counter = document.getElementById('counter')
 const settingsButton = document.getElementById('settings-button')
 const settingsMenu = document.getElementById('settings')
+const focusing = document.getElementById("focus");
+const relaxing = document.getElementById("relax");
 
 const settings = {}
 let interval // used for counting down the timer
@@ -17,8 +19,8 @@ let longBreak
 let pomo
 
 startButton.onclick = function () {
-  changeButtonText()
-}
+  changeButtonText();
+};
 
 settingsButton.onclick = function () {
   settingsMenu.classList.toggle('hidden')
@@ -28,13 +30,13 @@ settingsButton.onclick = function () {
 /**
  * Change the button text between Start/Stop
  */
-function changeButtonText () {
-  if (startButton.textContent === 'Start') {
-    startButton.textContent = 'Stop'
-    startTimer()
+function changeButtonText() {
+  if (startButton.textContent === "Start") {
+    startButton.textContent = "Stop";
+    startTimer();
   } else {
-    startButton.textContent = 'Start'
-    resetTimer()
+    startButton.textContent = "Start";
+    resetTimer();
   }
 }
 
@@ -75,32 +77,34 @@ function startTimer () {
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
  */
-function countDown (countDownTime) {
-  const now = new Date().getTime()
-  const difference = countDownTime - now // countDownTime is the time in the future
-  console.log(difference) // log the current difference
+function countDown(countDownTime) {
+  const now = new Date().getTime();
+  const difference = countDownTime - now; // countDownTime is the time in the future
+  console.log(difference); // log the current difference
 
   // a bit of hardcode :<
   // notice that most of the time the difference is 0~9ms smaller
   // ex. difference of 9000ms becomes 8995ms. This can be seen in the log.
   // Sometime javascipts goes crazy and 9000ms might become 8480ms...
   // So you might see the timer skip numbers...
-  let minute = Math.floor(((difference + 500) % (1000 * 60 * 60)) / (1000 * 60))
-  let second = Math.floor(((difference + 500) % (1000 * 60)) / 1000)
+  let minute = Math.floor(
+    ((difference + 500) % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  let second = Math.floor(((difference + 500) % (1000 * 60)) / 1000);
 
   // pad a '0' if turning into a single digit
   if (second < 10) {
-    second = '0' + second.toString()
+    second = "0" + second.toString();
   }
   if (minute < 10) {
-    minute = '0' + minute.toString()
+    minute = "0" + minute.toString();
   }
-  timer.innerHTML = minute + ':' + second
+  timer.innerHTML = minute + ":" + second;
 
   // if timer reaches 00:00
-  if (minute === '00' && second === '00') {
+  if (minute === "00" && second === "00") {
     // stop timer
-    clearInterval(interval)
+    clearInterval(interval);
 
     // check identifier
     if (identifier === 'pomo') {
@@ -111,33 +115,29 @@ function countDown (countDownTime) {
         identifier = 'long_break'
         enterLongBreak()
       } else {
-        identifier = 'short_break'
-        enterShortBreak()
+        identifier = "short_break";
+        enterShortBreak();
       }
-    } else if (identifier === 'short_break') {
+    } else if (identifier === 'short_break' || identifier === 'long_break') {
       identifier = 'pomo'
       // increment counter by 1 after short break
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
       enterPomo()
-    } else if (identifier === 'long_break') {
-      identifier = 'pomo'
-      pomoCount = 1 // reset pomo after long break
-      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
-      enterPomo()
-    }
+    } 
   }
 }
 
 /**
  * Resets Timer and Pomo Counter.
  */
-function resetTimer () {
-  timer.innerHTML = pomo
-  identifier = 'pomo'
-  pomoCount = 1
-  counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
-  startButton.textContent = 'Start'
-  clearInterval(interval)
+function resetTimer() {
+  focusing.style.color = "#fafaf2";
+  relaxing.style.color = "rgba(250, 250, 242, 0.2)";
+  timer.innerHTML = pomo;
+  identifier = "pomo";
+  pomoCount = 1;
+  counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`;
+  clearInterval(interval);
 }
 
 /**
@@ -236,39 +236,61 @@ window.onload = function () {
 /**
  * Enter a short break.
  */
-function enterShortBreak () {
-  makeZero()
+function enterShortBreak() {
+  makeZero();
   setTimeout(() => {
-    timer.innerHTML = shortBreak
-    startButton.textContent = 'Start'
-  }, 1000)
+    timer.innerHTML = shortBreak;
+    startButton.textContent = "Start";
+    focusing.style.color = "rgba(250, 250, 242, 0.2)";
+    relaxing.style.color = "#fafaf2";
+  }, 1000);
 }
 
 /**
  * Enter a pomo.
  */
-function enterPomo () {
-  makeZero()
+function enterPomo() {
+  makeZero();
   setTimeout(() => {
     timer.innerHTML = pomo
     startButton.textContent = 'Start'
-  }, 1000)
+
+    if (identifier === 'short_break') {
+      // increment counter by 1 after short break
+      pomoCount += 1
+    } else if (identifier === 'long_break') {
+      // reset pomo counter after long break
+      pomoCount = 1 
+    }
+    counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+    identifier = 'pomo'
+
+    timer.innerHTML = pomo;
+    startButton.textContent = "Start";
+    focusing.style.color = "#fafaf2";
+    relaxing.style.color = "rgba(250, 250, 242, 0.2)";
+  }, 1000);
 }
 
 /**
  * Enter a long break.
  */
-function enterLongBreak () {
-  makeZero()
+function enterLongBreak() {
+  makeZero();
   setTimeout(() => {
-    timer.innerHTML = longBreak
-    startButton.textContent = 'Start'
-  }, 1000)
+    timer.innerHTML = longBreak;
+    startButton.textContent = "Start";
+    focusing.style.color = "rgba(250, 250, 242, 0.2)";
+    relaxing.style.color = "#fafaf2";
+  }, 1000);
 }
 
 /**
  * Make the timer to be 00:00
  */
-function makeZero () {
-  timer.innerHTML = '00:00'
+function makeZero() {
+  timer.innerHTML = "00:00";
 }
+
+// module.exports = enterPomo;
+module.exports = enterShortBreak;

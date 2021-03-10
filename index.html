@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Title</title>
-    <script src="https://kit.fontawesome.com/f22b02c97a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <title>Pomo Timer</title>
+    <script
+      src="https://kit.fontawesome.com/f22b02c97a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css import -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/infobox.css" />
+    <!-- js important with defer -->
+    <script src="main.js" defer></script>
+    <script src="./js/infobox.js" defer></script>
+  </head>
+
+  <body>
     <header>
-        <!--Hamburger-->
-        <i id="bars" class="fas fa-bars"></i>
-        <!--Counter-->
-        <p id="counter">Pomo: 1&frasl;4</p>
-        <!--Pomo Info-->
-        <i class="fas fa-question"></i>
-        <!--Settings-->
-        <div id="settings-button"><i class="fas fa-cog"></i></div>
+      <!--Hamburger-->
+      <i id="bars" class="fas fa-bars"></i>
+      <!--Counter-->
+      <p id="counter">Pomo: 1&frasl;4</p>
+      <!--Settings-->
+      <i id="cogs" class="fas fa-cog"></i>
     </header>
-    <!--Task Menu-->
+
+    <!-- Task Menu -->
     <div id="tasks">
-        <ul>
-            <li id="current">
-                <input type="checkbox" class="task-check" name="task">
-                <label for="task" class="task-title">Task you want to complete</label>
-                <i class="fas fa-times"></i>
-                <br>
-                <ul class="task-body">
-                    <li class="task-pomos">?/2</li>
-                    <li class="task-description">Description</li>
-                </ul>
-            </li>
-        </ul>
+      <div id="task-header"></div>
+      <ul>
+        <li id="current">
+          <input type="checkbox" class="task-check" name="task" />
+          <label for="task" class="task-title">Task you want to complete</label>
+          <!-- <i class="fas fa-times"></i> -->
+          <br />
+          <ul class="task-body">
+            <li class="task-pomos">?/2</li>
+            <li class="task-description">Description</li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <!--Info Menu-->
-    <div id="info">
+
+    <!-- Info Menu-->
+    <!-- The Info Box -->
+    <div id="info" class="info-box">
+      <div class="info-content">
+        <!-- Close the Box-->
+        <span class="close">&times;</span>
         <h2>How to use the app!</h2>
         <p>Something something something lorem ipsem.</p>
+      </div>
     </div>
-    <!--Settings Menu-->
-    <div id="settings" class="hidden">
-        <!-- <h2 id="setting-header">Settings</h2> -->
+
+    <!--Settings Menu -->
+    <div id="settings">
+      <h2>Settings</h2>
+      <label for="settings1">Setting 1:</label>
+      <input type="text" id="settings1" name="settings1" />
     </div>
     <!--Main Content-->
     <div class="content">
-        <!--Timer-->
-        <h1 id="timer">00:00</h1>
-        <!--Button-->
-        <button id="stop">Start</button>
-        <!--Current Task-->
-        <p id="current-task">No tasks stored!</p>
+      <!--Break or focus indicator-->
+      <div class="break-focus">
+        <h2 id="focus">Focus</h2>
+        <h2 id="relax">Relax</h2>
+      </div>
+      <!--Timer-->
+      <h1 id="timer">00:04</h1>
+      <!--Button-->
+      <button id="stop">Start</button>
+      <!--Current Task-->
+      <p id="current-task">No tasks stored!</p>
     </div>
+    <footer class="footer">
+      <!--Pomo Info-->
+      <i id="mybtn" class="fas fa-question"></i>
+    </footer>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
