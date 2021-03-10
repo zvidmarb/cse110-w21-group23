@@ -8,6 +8,9 @@ beforeAll(() => {
   <i id="cogs" class="fas fa-cog"></i>
   <div id="settings" class="hidden">
   </div>
+  <i id="cogs" class="fas fa-cog"></i>
+  <div id="settings" class="hidden">
+  </div>
 `
   require('../main.js')
 })

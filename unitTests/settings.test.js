@@ -4,6 +4,14 @@ beforeAll(() => {
   document.body.innerHTML = `
   <i id="cogs" class="fas fa-cog"></i>
   <div id="settings" class="hidden">
+  </div>
+  <p id='counter'>Pomo: 1&frasl;4</p>
+  <h1 id='timer'>00:07</h1>
+  <button id='stop'>Start</button>
+  <h2 id="focus">Focus</h2>
+  <h2 id="relax">Relax</h2>
+  <i id="cogs" class="fas fa-cog"></i>
+  <div id="settings" class="hidden">
   </div>`
 
   require('../main.js')
