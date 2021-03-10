@@ -28,7 +28,9 @@ describe('Unit tests to ensure settings functionality.', () => {
     settingsButton.click()
 
     // Should be shown now
-    expect(settingsMenu.classList.contains('hidden')).toBeFalsy()
+    setTimeout(() => {
+      expect(settingsMenu.classList.contains('hidden')).toBeFalsy()
+    }, 1000)
   })
 
   test('Ensure addSetting properly functions', () => {
