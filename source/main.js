@@ -1,12 +1,12 @@
 // main.js
 
-const startButton = document.getElementById('stop')
-const timer = document.getElementById('timer')
-const counter = document.getElementById('counter')
-const settingsButton = document.getElementById('cogs')
-const settingsMenu = document.getElementById('settings')
-const focusing = document.getElementById('focus')
-const relaxing = document.getElementById('relax')
+let startButton
+let timer
+let counter
+let settingsButton
+let settingsMenu
+let focusing
+let relaxing
 
 const settings = {}
 let interval // used for counting down the timer
@@ -169,6 +169,14 @@ function addSetting (name, title, desc, def, cb) {
 }
 
 window.onload = function () {
+  // Load all our values
+  startButton = document.getElementById('stop')
+  timer = document.getElementById('timer')
+  counter = document.getElementById('counter')
+  settingsButton = document.getElementById('cogs')
+  settingsMenu = document.getElementById('settings')
+  focusing = document.getElementById('focus')
+  relaxing = document.getElementById('relax')
   // Add our onclicks
   startButton.onclick = function () {
     changeButtonText()
