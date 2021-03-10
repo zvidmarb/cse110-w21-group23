@@ -26,7 +26,7 @@ beforeEach(() => {
     <div id="settings" class="hidden">
     </div>
   `
-  let addSetting = require('../main.js')
+  require('../main.js')
 })
 
 test('Ensure when start/stop is pressed, text switches to the opposite', () => {
