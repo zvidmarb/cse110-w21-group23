@@ -4,7 +4,6 @@ beforeAll(() => {
   document.body.innerHTML = `
   <i id="cogs" class="fas fa-cog"></i>
   <div id="settings" class="hidden">
-    <!-- <h2 id="setting-header">Settings</h2> -->
   </div>`
 
   require('../main.js')
@@ -13,7 +12,7 @@ beforeAll(() => {
 describe('Unit tests to ensure settings functionality.', () => {
   test('Make sure the settings menu opens/closes on click', () => {
     // Get our settings box
-    const settingsMenu = document.getElementById('setting-header')
+    const settingsMenu = document.getElementById('settings')
     const settingsButton = document.getElementById('cogs')
 
     // Should start hidden
