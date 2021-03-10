@@ -9,44 +9,45 @@ beforeAll(() => {
 
 	require('../main.js')
 })
+describe('Unit tests to ensure settings functionality.', () => {
+	test('Make sure the settings menu opens/closes on click', () => {
+		// Get our settings box
+		const settingsMenu = document.getElementById('setting-header')
+		const settingsButton = document.getElementById('cogs')
 
-test('Make sure the settings menu opens/closes on click', () => {
-	// Get our settings box
-	const settingsMenu = document.getElementById('setting-header')
-	const settingsButton = document.getElementById('cogs')
+		// Should start hidden
+		expect(settingsMenu.classList.contains('hidden')).toBeTruthy()
 
-	// Should start hidden
-	expect(settingsMenu.classList.contains('hidden')).toBeTruthy()
+		// Click the button
+		settingsButton.click()
 
-	// Click the button
-	settingsButton.click()
+		// Should be shown now
+		expect(settingsMenu.classList.contains('hidden')).toBeFalsy()
+	})
 
-	// Should be shown now
-	expect(settingsMenu.classList.contains('hidden')).toBeFalsy()
-})
+	test('Ensure addSetting properly functions', () => {
+		// Setting value for testing
+		let testSetting
 
-test('Ensure addSetting properly functions', () => {
-	// Setting value for testing
-	let testSetting
+		// See if we can add a setting
+		addSetting(
+			'test_setting',
+			'Unused',
+			'Internal setting used for testing.',
+			5,
+			value => {
+				testSetting = parseInt(value)
+			}
+		)
 
-	// See if we can add a setting
-	addSetting(
-		'test_setting',
-    	'Unused',
-    	'Internal setting used for testing.',
-    	5,
-    	value => {
-			testSetting = parseInt(value)
-    	}
-	)
+		// Ensure the default is kept properly
+		expect(testSetting).toBe(5)
 
-	// Ensure the default is kept properly
-	expect(testSetting).toBe(5)
+		// Ensure we call the callback when the setting changes
+		const testSettingInput = document.getElementById("test_setting")
+		testSettingInput.val(9)
+		testSettingInput.trigger('change')
 
-	// Ensure we call the callback when the setting changes
-	const testSettingInput = document.getElementById("test_setting")
-	testSettingInput.val(9)
-	testSettingInput.trigger('change')
-
-	expect(testSetting).toBe(9)
+		expect(testSetting).toBe(9)
+	})
 })
