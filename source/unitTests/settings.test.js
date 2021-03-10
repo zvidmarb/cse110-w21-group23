@@ -4,7 +4,7 @@ beforeAll(() => {
         <!-- <h2 id="setting-header">Settings</h2> -->
     </div>`
 
-	require('../main.js')
+	const {_, addSetting} = require('../main.js')
 })
 
 test('Make sure the settings menu opens/closes on click', () => {
