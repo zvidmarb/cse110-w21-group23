@@ -293,7 +293,4 @@ function makeZero () {
 }
 
 // module.exports = enterPomo
-module.exports = {
-  enterShortBreak: enterShortBreak,
-  addSetting: addSetting,
-}
+module.exports = addSetting
