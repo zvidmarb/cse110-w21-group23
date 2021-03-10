@@ -13,10 +13,10 @@ let interval // used for counting down the timer
 let pomoCount = 1
 
 // All of these are going to be updated by the settings! If you want to change their default values, check window.onload and update the settings' defaults
-let totalCount
-let shortBreak
-let longBreak
-let pomo
+let totalCount = 4
+let shortBreak = 5
+let longBreak = 30
+let pomo = 25
 
 // some initial variables declaration for convenience of future reference
 let initTime = '25:00'
