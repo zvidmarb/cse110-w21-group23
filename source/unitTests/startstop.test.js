@@ -22,9 +22,13 @@ test('Ensure when start/stop is pressed, text switches to the opposite', () => {
 
   // check the onclick event
   startButton.click()
-  expect(startButton.textContent).toBe('Stop')
-  startButton.click()
-  expect(startButton.textContent).toBe('Start')
+  setTimeout(() => {
+    expect(startButton.textContent).toBe('Stop')
+    startButton.click()
+      setTimeout(() => {
+      expect(startButton.textContent).toBe('Start')
+    }, 1000)
+  }, 1000)
 })
 
 test('Ensure when stop is pressed, the timer is reset to the max time', (done) => {
@@ -35,20 +39,22 @@ test('Ensure when stop is pressed, the timer is reset to the max time', (done) =
   // click start
   startButton.click()
   // console.log('start is pressed')
-  expect(startButton.textContent).toBe('Stop')
-
-  // wait for 2 seconds for the timer to change text
   setTimeout(() => {
-    const timer = document.getElementById('timer')
-    // the timer should be changed
-    expect(timer.innerHTML).not.toBe(maxTime)
+    expect(startButton.textContent).toBe('Stop')
 
-    // click stop
-    startButton.click()
-    // console.log('stop is pressed')
-    expect(startButton.textContent).toBe('Start')
-    // the timer should be reset
-    expect(timer.innerHTML).toBe(maxTime)
-    done()
-  }, 2000)
+    // wait for 2 seconds for the timer to change text
+    setTimeout(() => {
+      const timer = document.getElementById('timer')
+      // the timer should be changed
+      expect(timer.innerHTML).not.toBe(maxTime)
+
+      // click stop
+      startButton.click()
+      // console.log('stop is pressed')
+      expect(startButton.textContent).toBe('Start')
+      // the timer should be reset
+      expect(timer.innerHTML).toBe(maxTime)
+      done()
+    }, 1)
+  }, 1000)
 })

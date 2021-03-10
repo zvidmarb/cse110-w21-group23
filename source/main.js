@@ -173,7 +173,7 @@ window.onload = function () {
   startButton.onclick = function () {
     changeButtonText()
   }
-  
+
   settingsButton.onclick = function () {
     settingsMenu.classList.toggle('hidden')
     resetTimer()
