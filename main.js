@@ -23,15 +23,6 @@ let initTime = '25:00'
 let initMinute
 let identifier = 'pomo'
 
-startButton.onclick = function () {
-  changeButtonText()
-}
-
-settingsButton.onclick = function () {
-  settingsMenu.classList.toggle('hidden')
-  resetTimer()
-}
-
 /**
  * Change the button text between Start/Stop
  */
@@ -178,6 +169,16 @@ function addSetting (name, title, desc, def, cb) {
 }
 
 window.onload = function () {
+  // Add our onclicks
+  startButton.onclick = function () {
+    changeButtonText()
+  }
+  
+  settingsButton.onclick = function () {
+    settingsMenu.classList.toggle('hidden')
+    resetTimer()
+  }
+
   // Settings
   addSetting(
     'pomos_before_long_break',
