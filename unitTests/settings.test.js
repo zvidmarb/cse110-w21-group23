@@ -1,5 +1,6 @@
 beforeAll(() => {
 	document.body.innerHTML = `
+	<i id="cogs" class="fas fa-cog"></i>
 	<div id="settings" class="hidden">
         <!-- <h2 id="setting-header">Settings</h2> -->
     </div>`
@@ -10,7 +11,7 @@ beforeAll(() => {
 test('Make sure the settings menu opens/closes on click', () => {
 	// Get our settings box
 	const settingsMenu = document.getElementById('setting-header')
-	const settingsButton = document.getElementById('settings-button')
+	const settingsButton = document.getElementById('cogs')
 
 	// Should start hidden
 	expect(settingsMenu.classList.contains('hidden')).toBeTruthy()
