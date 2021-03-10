@@ -1,18 +1,21 @@
-const addSetting = require('../main.js')
+let addSetting
 
-beforeAll(() => {
-  document.body.innerHTML = `
-    <i id="cogs" class="fas fa-cog"></i>
-    <div id="settings" class="hidden">
-    </div>
-    <p id='counter'>Pomo: 1&frasl;4</p>
-    <h1 id='timer'>00:07</h1>
-    <button id="stop">Start</button>
-    <h2 id="focus">Focus</h2>
-    <h2 id="relax">Relax</h2>
+document.body.innerHTML = `
+  <p id='counter'>Pomo: 1&frasl;4</p>
+  <h1 id='timer'>00:07</h1>
+  <button id="stop">Start</button>
+  <h2 id="focus">Focus</h2>
+  <h2 id="relax">Relax</h2>
+  <i id="cogs" class="fas fa-cog"></i>
+  <div id="settings" class="hidden">
+  </div>
+  <i id="cogs" class="fas fa-cog"></i>
+  <div id="settings" class="hidden">
+  </div>
   `
 
-  require('../main.js')
+beforeEach(() => {
+  addSetting = require('../main.js')
 })
 
 describe('Unit tests to ensure settings functionality.', () => {
@@ -53,8 +56,8 @@ describe('Unit tests to ensure settings functionality.', () => {
 
     // Ensure we call the callback when the setting changes
     const testSettingInput = document.getElementById('test_setting')
-    testSettingInput.val(9)
-    testSettingInput.trigger('change')
+    testSettingInput.value = 9
+    testSettingInput.onchange()
 
     expect(testSetting).toBe(9)
   })

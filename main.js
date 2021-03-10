@@ -1,12 +1,12 @@
 // main.js
 
-let startButton
-let timer
-let counter
-let settingsButton
-let settingsMenu
-let focusing
-let relaxing
+let startButton = document.getElementById('stop')
+let timer = document.getElementById('timer')
+let counter = document.getElementById('counter')
+let settingsButton = document.getElementById('cogs')
+let settingsMenu = document.getElementById('settings')
+let focusing = document.getElementById('focus')
+let relaxing = document.getElementById('relax')
 
 const settings = {}
 let interval // used for counting down the timer
@@ -144,6 +144,7 @@ function resetTimer () {
 function addSetting (name, title, desc, def, cb) {
   // Add the setting to our list, and set it to default
   settings[name] = def
+  cb(def)
 
   // Create the HTML
   const label = document.createElement('label')
@@ -155,6 +156,7 @@ function addSetting (name, title, desc, def, cb) {
   input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
+
   settingsMenu.appendChild(label)
   settingsMenu.appendChild(input)
 
@@ -169,16 +171,10 @@ function addSetting (name, title, desc, def, cb) {
 }
 
 window.onload = function () {
-  // Load all our values
-  startButton = document.getElementById('stop')
-  timer = document.getElementById('timer')
-  counter = document.getElementById('counter')
-  settingsButton = document.getElementById('cogs')
-  settingsMenu = document.getElementById('settings')
-  focusing = document.getElementById('focus')
-  relaxing = document.getElementById('relax')
   // Add our onclicks
+  console.log(startButton)
   startButton.onclick = function () {
+    console.log("CLICKED")
     changeButtonText()
   }
 
