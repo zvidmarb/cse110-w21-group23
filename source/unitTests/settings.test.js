@@ -1,3 +1,5 @@
+const addSetting = require('../main.js')
+
 beforeAll(() => {
 	document.body.innerHTML = `
 	<i id="cogs" class="fas fa-cog"></i>
@@ -5,7 +7,7 @@ beforeAll(() => {
         <!-- <h2 id="setting-header">Settings</h2> -->
     </div>`
 
-	const {_, addSetting} = require('../main.js')
+	require('../main.js')
 })
 
 test('Make sure the settings menu opens/closes on click', () => {
