@@ -176,6 +176,7 @@ function renderTopTask() {
       currentTask.appendChild(createNewTask(nextTaskName, "topTask", false, false))
     } else {
       currentTask.innerHTML = "No task Stored"
+
     }
 }
 

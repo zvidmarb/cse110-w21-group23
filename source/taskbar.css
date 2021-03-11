@@ -132,5 +132,13 @@
   border-image-slice: 1;
 }
 
+/* grey out completed tasks */
+#completed-tasks {
+  opacity: 0.6; 
+  filter: alpha(opacity = 60); 
+}
 
+#current-task {
+  padding-top: 20px;
+}
 
