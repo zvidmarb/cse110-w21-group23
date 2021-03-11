@@ -38,7 +38,7 @@
 ### Attendance
 - [x] Colin Young
 - [x] Stella Ma
-- [ ] Josh Cross
+- [x] Josh Cross
 - [x] Abdelkader Laouini (LA)
 - [x] Benny Cai
 - [x] Nawwar Tohme
