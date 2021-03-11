@@ -30,3 +30,13 @@
 - More specific specs can be found on GitHub issues, we should plan on having a mostly functional app by next Thursday
 - CSS TEAM: mockup/style guide and website layout by next Thursday
 - JS TEAM: start/stop button and timer by next Thursday
+
+### Attendance
+- [x] Colin Young
+- [x] Stella Ma
+- [ ] Josh Cross
+- [x] Abdelkader Laouini (LA)
+- [x] Benny Cai
+- [x] Nawwar Tohme
+- [x] Edgar Flores
+- [x] Zeven Vidmar-Barker
