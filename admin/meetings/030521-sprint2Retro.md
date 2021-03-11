@@ -1,5 +1,5 @@
 
-# Pomodore timer First Sprint Retrospective
+# Pomodore timer Second Sprint Retrospective
 
 ## Time: Feb.21th - Ma.5th (2 Weeks)
 ## Members: team 23 - Whatever you want
