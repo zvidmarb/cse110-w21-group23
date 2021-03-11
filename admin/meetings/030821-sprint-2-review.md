@@ -34,3 +34,13 @@
 - Benny: clean up task menu code and push changes soon
 - Edgar: fill out the info box
 - josh: write unit tests, finish settings and pull request
+
+### Attendance
+- [x] Colin Young
+- [x] Stella Ma
+- [ ] Josh Cross
+- [x] Abdelkader Laouini (LA)
+- [x] Benny Cai
+- [x] Nawwar Tohme
+- [x] Edgar Flores
+- [x] Zeven Vidmar-Barker
