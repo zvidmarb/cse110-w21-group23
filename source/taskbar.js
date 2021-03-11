@@ -55,6 +55,7 @@ addBtn.onclick = function () {
   inputField.setAttribute('type', 'input')
   inputField.setAttribute('class', 'form_field')
   inputField.setAttribute('placeholder', 'Enter a Task')
+  inputField.setAttribute('maxLength', '50')
   
   ongoingTasks.appendChild(inputField)  // append the input field to the end of the tasklist
 
@@ -94,40 +95,41 @@ function addNewTask(newTaskName) {
  */
 function deleteTask(e) {
   const icon = e.target // get the delete icon
+  let location // either in ongoingArr or completedArr
   const taskItem = icon.parentElement.parentElement// get the parent of the icon, which is the li element
+  if (taskItem.parentElement === ongoingTasks) {
+    location = ongoingArr
+  } else if (taskItem.parentElement === completeTasks) {
+    location = completedArr
+  }
+
   const taskLabel = taskItem.querySelector('p').textContent // get the task label inside the li element
   taskItem.remove() // remove the li element
 
-  let location // either in ongoingArr or completedArr
-
-  // find its location and splice the tasklist to remove it
-  let count1 = 0
-  let index1 = 0
-  ongoingArr.forEach((task) => {
-    if (task.name === taskLabel) {
-      location = ongoingArr // if it's from ongoingArr
-      ongoingArr.splice(count1, 1) // update ongoingAr
-      index1 = count1
-    }
-    count1++
-  })
-
-  let count2 = 0
-  completedArr.forEach((task) => {
-    if (task.name === taskLabel) {
-      location = completedArr // if it's from completedArr
-      completedArr.splice(count2, 1)  // update completedArr
-    }
-    count2++
-  })
-
   if (location === ongoingArr) {
+    // splice the tasklist to remove it
+    let count1 = 0
+    let index1 = 0
+    ongoingArr.forEach((task) => {
+      if (task.name === taskLabel) {
+        ongoingArr.splice(count1, 1) // update ongoingAr
+        index1 = count1
+      }
+      count1++
+    })
     localStorage.setItem('ongoingTasks', JSON.stringify(ongoingArr)) //override the previous ongoing Tasklist
     // if the first task is deleted, change the top task as well
     if (index1 === 0) {
       renderTopTask()
     }
   } else if (location === completedArr) {
+    let count2 = 0
+    completedArr.forEach((task) => {
+      if (task.name === taskLabel) {
+        completedArr.splice(count2, 1)  // update completedArr
+      }
+      count2++
+    })
     localStorage.setItem('completedTasks', JSON.stringify(completedArr)) //override the previous completed Tasklist
   }
 }
@@ -175,7 +177,7 @@ function renderTopTask() {
       const nextTaskName = ongoingTasks.querySelector('li').querySelector('p').textContent
       currentTask.appendChild(createNewTask(nextTaskName, "topTask", false, false))
     } else {
-      currentTask.innerHTML = "No task Stored"
+      currentTask.innerHTML = "No task stored!"
 
     }
 }
@@ -205,6 +207,7 @@ function editTask(e) {
   inputField.setAttribute('type', 'input')
   inputField.setAttribute('class', 'form_field')
   inputField.setAttribute('placeholder', taskLabel)
+  inputField.setAttribute('maxLength', '50')
   
   var nodes = Array.from( ongoingTasks.children ) // get all children of the ol
   index = nodes.indexOf(taskItem) // get the index of the task that was clicked on

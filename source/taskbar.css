@@ -64,47 +64,46 @@
   margin-left: 10px;
 }
 
-/* the li element - task container*/
+/* the li element - task container */
 .task {
   display:flex;
   flex-direction: row;
   align-items: center;
-}
-
-.task a:hover {
-  /* color: #9e9e9e; */
-  transition: 0.3s;
+  margin-top: -20px;
+  margin-left: -20px;
+  position: relative;
 }
 
 /* checkbox */
 .checkbox {
-  display: flex;
-  float: left;
+  position: absolute;
+  top: 30px;
+  left: 0px;
 }
 
-/* the p element - the task label*/
+/* tasklabel */
 .taskLabel {
-  float: left;
-  display: flex;
-  margin-left: 10px;
+  margin-left: 30px;
+  margin-right: 50px;
 }
 
 /* the edit icon */
 .editIcon {
   font-size: 10px;
   cursor: pointer;
-  float: right;
   position: absolute;
-  right: 55px;
+  bottom: 25px;
+  right: 45px;
 }
 
 /* the delete icon */
 .deleteIcon {
   cursor: pointer;
   font-size: 20px;
-  float: right;
   position: absolute; 
-  right: 30px;
+  right: 20px;
+  bottom: 25px;
+
   text-decoration: none;
   color: black
 }
@@ -117,8 +116,7 @@
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 1.3rem;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -139,6 +137,12 @@
 }
 
 #current-task {
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+/* li element in the current task */
+#current-task .task {
+  margin-left: 35px;
 }
 
