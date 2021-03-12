@@ -154,6 +154,7 @@ function addSetting (name, title, desc, def, cb) {
   const input = document.createElement('input')
   input.setAttribute('type', 'number')
   input.setAttribute('min', '1')
+  input.setAttribute('max', '1000')
   input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
@@ -165,6 +166,8 @@ function addSetting (name, title, desc, def, cb) {
   input.onchange = function (event) {
     if (input.value < 1) {
       input.value = 1
+    } else if (input.value > 1000) {
+      input.value = 1000
     }
 
     const newValue = input.value
