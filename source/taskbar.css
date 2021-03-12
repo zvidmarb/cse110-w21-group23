@@ -39,6 +39,7 @@
 
 #taskbar > ol {
   list-style-type: none;
+  margin-bottom: 0px;
 }
 
 
