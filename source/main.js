@@ -166,7 +166,7 @@ function addSetting (name, title, desc, def, cb) {
     if (input.value < 1) {
       input.value = 1
     }
-    
+
     const newValue = input.value
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
