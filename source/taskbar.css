@@ -62,6 +62,13 @@
 
 #plus {
   margin-left: 10px;
+  background-color: black; 
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 /* the li element - task container */
@@ -81,7 +88,7 @@
   left: 0px;
 }
 
-/* tasklabel */
+/* tasklabel - the p element*/
 .taskLabel {
   margin-left: 30px;
   margin-right: 50px;
