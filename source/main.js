@@ -153,6 +153,7 @@ function addSetting (name, title, desc, def, cb) {
   label.textContent = title
   const input = document.createElement('input')
   input.setAttribute('type', 'number')
+  input.setAttribute('min', '1')
   input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
@@ -162,6 +163,10 @@ function addSetting (name, title, desc, def, cb) {
 
   // Create event listener
   input.onchange = function (event) {
+    if (input.value < 1) {
+      input.value = 1
+    }
+    
     const newValue = input.value
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
