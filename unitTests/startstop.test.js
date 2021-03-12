@@ -1,4 +1,5 @@
-/*document.body.innerHTML = `
+/*
+document.body.innerHTML = `
   <p id='counter'>Pomo: 1&frasl;4</p>
   <h1 id='timer'>00:07</h1>
   <button id="stop">Start</button>
@@ -73,6 +74,7 @@ test('Ensure when stop is pressed, the timer is reset to the max time', (done) =
   }, 1000)
 })
 */
+
 test('A test to make things pass for now', () => {
   expect(1).toBe(1)
 })
