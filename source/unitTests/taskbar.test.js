@@ -14,7 +14,7 @@ beforeAll(() => {
   </div>
   <div id="current-task">No tasks stored!</div>
 `
-  require('../taskbar.js')
+  require('../js/taskbar.js')
 })
 
 

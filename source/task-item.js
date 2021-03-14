@@ -47,7 +47,7 @@ class TaskItem extends HTMLElement {
     // Apply external styles to the shadow dom
     const linkElem = document.createElement("link")
     linkElem.setAttribute("rel", "stylesheet");
-    linkElem.setAttribute("href", "./taskbar.css")
+    linkElem.setAttribute("href", "./css/taskbar.css")
 
     // Attach the created element to the shadow dom
     shadow.appendChild(linkElem);
