@@ -34,4 +34,3 @@ window.onclick = function (event) {
     info.style.display = 'none'
   }
 }
-

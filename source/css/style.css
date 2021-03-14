@@ -157,6 +157,7 @@ header {
   display: block;
   height: 2.5em;
 }
+
 .popup-header > h2 {
   text-align: center;
   padding-top: 0.5em;
@@ -167,13 +168,14 @@ header {
 .popup-header > .close {
   text-decoration: none;
   position: absolute;
-  top: 0.3em;  
+  top: 0.3em;
   font-size: 1.5em;
   display: inline-block;
   right: 5%;
   transition: 0.3s;
   color: inherit;
 }
+
 .close:hover {
   color: #c3c8c0;
 }

@@ -308,4 +308,4 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-module.exports = {enterPomo, enterShortBreak, enterLongBreak, addSetting};
+module.exports = { enterPomo, enterShortBreak, enterLongBreak, addSetting }

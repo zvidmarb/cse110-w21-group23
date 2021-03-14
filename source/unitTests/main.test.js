@@ -10,30 +10,30 @@ beforeAll(() => {
 })
 
 test('a lot of tests for main.js', (done) => {
-  const {enterPomo, enterShortBreak, enterLongBreak} = require('../main')
+  const { enterPomo, enterShortBreak, enterLongBreak } = require('../main')
   const focusing = document.getElementById('focus')
   const relaxing = document.getElementById('relax')
   // wait for 1.5 seconds for the timer to switch to short break
-  enterShortBreak();
+  enterShortBreak()
   setTimeout(() => {
-    expect(focusing.style.color).toBe("rgba(250, 250, 242, 0.2)")
+    expect(focusing.style.color).toBe('rgba(250, 250, 242, 0.2)')
     // expect(relaxing.style.color).toBe("#fafaf2")
     done()
   }, 1500)
-  
+
   // wait for 1.5 seconds for the timer to switch to pomo
-  enterPomo();
+  enterPomo()
   setTimeout(() => {
-    expect(focusing.style.color).toBe("#fafaf2")
-    expect(relaxing.style.color).toBe("rgba(250, 250, 242, 0.2)")
+    expect(focusing.style.color).toBe('#fafaf2')
+    expect(relaxing.style.color).toBe('rgba(250, 250, 242, 0.2)')
     done()
   }, 1500)
 
   // wait for 1.5 seconds for the timer to switch to long break
-  enterLongBreak();
+  enterLongBreak()
   setTimeout(() => {
-    expect(focusing.style.color).toBe("rgba(250, 250, 242, 0.2)")
-    expect(relaxing.style.color).toBe("#fafaf2")
+    expect(focusing.style.color).toBe('rgba(250, 250, 242, 0.2)')
+    expect(relaxing.style.color).toBe('#fafaf2')
     done()
   }, 1500)
-}) 
+})
