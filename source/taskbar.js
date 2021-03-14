@@ -2,11 +2,11 @@
 
 function openNav() {
   // the width will probably be changed later
-  document.getElementById('taskbar').style.width = '350px'
+  document.getElementById('taskbar').style.display = 'flex'
 }
 
 function closeNav () {
-  document.getElementById('taskbar').style.width = '0'
+  document.getElementById('taskbar').style.display = 'none'
 }
 
 let ongoingArr = [] // initialize a ongoing tasklist to store all the ongoing tasks of the format {"name" : ""}
