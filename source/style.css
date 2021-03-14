@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,500&display=swap');
 
 html,
 body {
@@ -48,7 +49,7 @@ header {
 
 #stop {
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   background-color: #56af97;
   border: none;
   color: #fafaf2;
@@ -110,12 +111,29 @@ header {
 }
 
 .popup-header {
-  background-color: #56AF97 !important;
+  background-color: #56af97 !important;
   color: #fafaf2 !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  /* position: absolute;
-  width: 100%; */
+  position: relative;
+  display: block;
+  height: 2.5em;
+}
+.popup-header > h2 {
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0 auto;
+}
+
+.popup-header > .close {
+  text-decoration: none;
+  position: absolute;
+  top: 0.3em;  
+  font-size: 1.5em;
+  display: inline-block;
+  right: 5%;
+  transition: 0.3s;
+  color: inherit;
+}
+.close:hover {
+  color: #c3c8c0;
 }

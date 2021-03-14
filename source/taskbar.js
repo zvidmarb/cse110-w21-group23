@@ -289,7 +289,7 @@ function createNewTask(taskName, location, canEdit, canDelete) {
   let editIcon = document.createElement('span')
   editIcon.setAttribute('class', 'editIcon')
   editIcon.addEventListener('click', editTask)
-  editIcon.innerHTML = `<i class="material-icons">border_color</i>`
+  editIcon.innerHTML = `<i class="fa fa-pen"></i>`
 
   // create the delete icon
   let deleteIcon = document.createElement("span")
