@@ -3,7 +3,7 @@ beforeAll(() => {
     <p id='counter'>Pomo: 1&frasl;4</p>
     <h1 id='timer'>00:07</h1>
     <button id='stop'>Start</button>
-    <i id="mybtn" class="fas fa-question"></i>
+    <i id="info-button" class="fas fa-question"></i>
     <div id="info" class="info-box">
       <div class="info-content">
         <span id="infoClose" class="close">&times;</span>
@@ -17,9 +17,9 @@ beforeAll(() => {
 
 describe('Test if block active when it is clicked', () => {
   test('Click is working', () => {
-    const btn = document.getElementById('mybtn')
+    const btn = document.getElementById('info-button')
     const info = document.getElementById('info')
-    const close = document.getElementById('infoClose')
+    const close = document.getElementByClassName('close')[1]
     btn.click()
     expect(info.style.display).toBe('block')
     close.click()
