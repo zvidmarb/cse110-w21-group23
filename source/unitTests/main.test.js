@@ -47,8 +47,10 @@ test('a lot of tests for main.js', (done) => {
   changeButtonText()
   changeButtonText()
 
-let testSetting = 0
+  // Setting value for testing
+  let testSetting
 
+  // See if we can add a setting
   addSetting(
     'test_setting',
     'Unused',
@@ -58,4 +60,14 @@ let testSetting = 0
       testSetting = parseInt(value)
     }
   )
+
+  // Ensure the default is kept properly
+  expect(testSetting).toBe(5)
+
+  // Ensure we call the callback when the setting changes
+  const testSettingInput = document.getElementById('test_setting')
+  testSettingInput.value = 9
+  testSettingInput.onchange()
+
+  expect(testSetting).toBe(9)
 })
