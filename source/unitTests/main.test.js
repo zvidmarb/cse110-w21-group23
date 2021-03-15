@@ -5,12 +5,19 @@ beforeAll(() => {
 <button id='stop'>Start</button>
 <h2 id="focus">Focus</h2>
 <h2 id="relax">Relax</h2>
+<i id="cogs" class="fas fa-cog"></i>
+<div id="settings" class="hidden">
+</div>
+<i id="cogs" class="fas fa-cog"></i>
+<div id="settings" class="hidden">
+</div>
+<audio id="phase-audio" volume=".30" style="display: none;"></audio>
 `
   require('../js/main.js')
 })
 
 test('a lot of tests for main.js', (done) => {
-  const { enterPomo, enterShortBreak, enterLongBreak, _ } = require('../js/main')
+  const { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, _ } = require('../js/main')
   const focusing = document.getElementById('focus')
   const relaxing = document.getElementById('relax')
   // wait for 1.5 seconds for the timer to switch to short break
@@ -36,4 +43,7 @@ test('a lot of tests for main.js', (done) => {
     expect(relaxing.style.color).toBe('#fafaf2')
     done()
   }, 1500)
+
+  changeButtonText()
+  changeButtonText()
 })

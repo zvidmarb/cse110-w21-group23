@@ -35,7 +35,7 @@ describe('Unit tests to ensure settings functionality.', () => {
   })
 
   test('Ensure addSetting properly functions', () => {
-    const { _, __, ___, addSetting } = require('../js/main')
+    const { _, __, ___, ____, addSetting } = require('../js/main')
     // Setting value for testing
     let testSetting
 

@@ -61,7 +61,7 @@ function startTimer () {
       break
   }
 
-  initMinute = parseInt(initTime.slice(0, 2))
+  initMinute = parseInt(initTime.toString().slice(0, 2))
 
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000
@@ -354,4 +354,4 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-module.exports = { enterPomo, enterShortBreak, enterLongBreak, addSetting }
+module.exports = { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting }
