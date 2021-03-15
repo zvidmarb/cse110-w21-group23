@@ -47,6 +47,8 @@ test('a lot of tests for main.js', (done) => {
   changeButtonText()
   changeButtonText()
 
+let testSetting = 0
+
   addSetting(
     'test_setting',
     'Unused',
