@@ -1,4 +1,4 @@
-# Group 23 - Whatever Ye Want
+# Group 23 - Whatever You Want
 
 ## Pomo web
 You can access pomo web using this [link](https://zvidmarb.github.io/cse110-w21-group23/).
