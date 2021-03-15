@@ -72,10 +72,15 @@ header {
 
 #cogs {
   margin-right: 1%;
+  cursor: pointer;
 }
 
 #info {
   display: none;
+}
+
+#info-button {
+  cursor: pointer;
 }
 
 #settings.hidden {
@@ -178,4 +183,5 @@ header {
 
 .close:hover {
   color: #c3c8c0;
+  cursor: pointer;
 }
