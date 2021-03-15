@@ -114,3 +114,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.eslintrc.js
+.gitignore
+.gitignore
+package-lock.json
+docs/jsdocs/scripts/linenumber.js
+docs/jsdocs/scripts/prettify/lang-css.js
+docs/jsdocs/scripts/prettify/prettify.js

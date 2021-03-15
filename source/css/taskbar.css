@@ -1,0 +1,167 @@
+
+/* taskbar css */
+@import url('style.css');
+
+#taskbar {
+  align-self: stretch;
+  justify-self: start;
+  min-width: 200pt;
+  width: 75%;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: none;
+  flex-direction: column;
+  background-color: #fafaf2;
+  color: #1f3029;
+  font-weight: 500;
+}
+
+.task a:hover {
+  /* color: #9e9e9e; */
+  transition: 0.3s;
+}
+
+#list a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f0f0f0;
+  display: block;
+  transition: 0.3s;
+}
+
+#list a:hover {
+  color: #9e9e9e;
+}
+
+#taskbar > ol {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+#completed-header {
+  display: block;
+  color: #fafaf2;
+  background-color: #56af97;
+  position: relative;
+  height: 1.6em;
+}
+
+#completed-header > h3 {
+  text-align: center;
+  margin: 0 auto;
+  justify-self: center;
+}
+
+#ongoing-tasks li:first-child {
+  font-weight: 700;
+}
+
+#plus {
+  background-color: #1f3029;
+  border: none;
+  color: #fafaf2;
+  text-align: center;
+  font-size: 26px;
+  border-radius: 50%;
+  width: 26pt;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  margin: 4% 0;
+}
+
+/* the li element - task container */
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -20px;
+  margin-left: -20px;
+  position: relative;
+}
+
+.task:hover {
+  background-color: #e1f2ec80;
+}
+
+/* checkbox */
+.checkbox {
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+/* tasklabel - the p element */
+.taskLabel {
+  flex-basis: 70%;
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+/* the edit icon */
+.editIcon {
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  bottom: 25px;
+  float: right;
+  right: 55px;
+  color: #56635b;
+}
+
+/* the delete icon */
+.deleteIcon {
+  cursor: pointer;
+  margin: 5px;
+  font-size: 20px;
+  bottom: 25px;
+  float: right;
+  right: 30px;
+  text-decoration: none;
+  color: #56635b;
+}
+
+/* the input field */
+.form_field {
+  font-family: inherit;
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  margin-bottom: 13px;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form_field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+/* grey out completed tasks */
+#completed-tasks {
+  opacity: 0.6;
+  filter: alpha(opacity = 60);
+}
+
+#current-task {
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+/* li element in the current task */
+#current-task .task {
+  margin-left: 35px;
+}
+
+#current-task > .task:hover {
+  background: none;
+}

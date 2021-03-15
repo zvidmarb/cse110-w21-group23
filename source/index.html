@@ -1,102 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pomo Timer</title>
-    <script
-      src="https://kit.fontawesome.com/f22b02c97a.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- css import -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/infobox.css" />
-    <!-- js important with defer -->
-    <script src="./js/main.js" defer></script>
-    <script src="./js/infobox.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <!--Hamburger-->
-      <i id="bars" class="fas fa-bars"></i>
-      <!--Counter-->
-      <p id="counter">Pomo: 1&frasl;4</p>
-      <!--Settings-->
-      <i id="cogs" class="fas fa-cog"></i>
-    </header>
+<head>
+  <title>Pomo Timer</title>
+  <script src="https://kit.fontawesome.com/f22b02c97a.js" crossorigin="anonymous"></script>
+  <!-- import the edit icon  -->
+  <!-- HEAD -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- css import -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/taskbar.css" />
+  <link rel="stylesheet" href="./css/infobox.css" />
+  <!-- js important with defer -->
+  <script src="./js/main.js" defer></script>
+  <script src="./js/infobox.js" defer></script>
+  <script src="./js/taskbar.js" defer></script>
+</head>
 
-    <!-- Task Menu -->
-    <div id="tasks">
-      <div id="task-header"></div>
-      <ul>
-        <li id="current">
+<body>
+  <header>
+    <!--Hamburger-->
+    <i id="bars" class="fas fa-bars" onclick="openNav()"></i>
+    <!--Counter-->
+    <p id="counter">Pomo: 1&frasl;4</p>
+    <!--Settings-->
+    <i id="cogs" class="fas fa-cog"></i>
+  </header>
+
+  <!-- Task Menu -->
+  <div id="taskbar">
+
+    <div id="task-header" class="popup-header">
+      <h2 id="task-header-label">Tasks</h2>
+      <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+    </div>
+
+    <ol id="ongoing-tasks">
+      <!--
+        <li class="task">
           <input type="checkbox" class="task-check" name="task" />
           <label for="task" class="task-title">Task you want to complete</label>
-          <!-- <i class="fas fa-times"></i> -->
-          <br />
-          <ul class="task-body">
-            <li class="task-pomos">?/2</li>
-            <li class="task-description">Description</li>
-          </ul>
+          <i class="fas fa-times"></i>
         </li>
-      </ul>
+      -->
+    </ol>
+
+    <button id="plus">+</button>
+
+    <div id="completed-header">
+      <h3 id="completed-header-label">Completed</h3>
     </div>
 
-    <!-- Info Menu-->
-    <!-- The Info Box -->
-    <div id="info" class="info-box">
-      <div class="info-content">
-        <!-- Close the Box-->
-        <span class="close">&times;</span>
-        <h2>What is the Pomodoro Technique?</h2>
-        <p>
-          The Pomodoro Technique is a time management method developed by
-          Francesco Cirillo in the late 1980s. The technique uses a timer to
-          break down work into intervals, traditionally 25 minutes in length,
-          separated by short breaks. Each interval is known as a pomodoro, from
-          the Italian word for 'tomato', after the tomato-shaped kitchen timer
-          that Cirillo used as a university student.
-        </p>
-        <h2>How to use the app?</h2>
-        <ol>
-          <li>Add the task to work on.</li>
-          <li>
-            Set the number of pomodoros for the task (1 pomo is equal to 25
-            minutes of work).
-          </li>
-          <li>Select a task to work on.</li>
-          <li>Work on the task while the app is on Focus.</li>
-          <li>
-            Once the timer ends and switches to Relax, take a break for this
-            duration of time.
-          </li>
-          <li>Repeat steps 1-5 until you finish your task!</li>
-        </ol>
-      </div>
-    </div>
+    <ol id="completed-tasks">
+      <!--
+        <li class="task">
+          <input type="checkbox" class="task-check" name="task" />
+          <label for="task" class="task-title">Task you want to complete</label>
+          <i class="fas fa-times"></i>
+        </li>
+      -->
+    </ol>
 
-    <!--Settings Menu-->
-    <div id="settings" class="hidden">
-      <!-- <h2 id="setting-header">Settings</h2> -->
+  </div>
+
+  <!-- Info Menu-->
+  <!-- The Info Box -->
+  <div id="info" class="info-box">
+    <div class="info-content">
+      <!-- Close the Box-->
+      <span id="info-close" class="close">&times;</span>
+      <h2>What is the Pomodoro Technique?</h2>
+      <p>
+        The Pomodoro Technique is a time management method developed by
+        Francesco Cirillo in the late 1980s. The technique uses a timer to
+        break down work into intervals, traditionally 25 minutes in length,
+        separated by short breaks. Each interval is known as a pomodoro, from
+        the Italian word for 'tomato', after the tomato-shaped kitchen timer
+        that Cirillo used as a university student.
+      </p>
+      <h2>How to use the app?</h2>
+      <ol>
+        <li>Add the task to work on.</li>
+        <li>
+          Change settings, if needed (current settings recommended for optimal technique).
+        </li>
+        <li>Select a task to work on.</li>
+        <li>Work on the task while the app is on Focus.</li>
+        <li>
+          Once the timer ends and switches to Relax, take a break for this
+          duration of time.
+        </li>
+        <li>Repeat steps 1-5 until you finish your task!</li>
+      </ol>
     </div>
-    <!--Main Content-->
-    <div class="content">
-      <!--Break or focus indicator-->
-      <div class="break-focus">
-        <h2 id="focus">Focus</h2>
-        <h2 id="relax">Relax</h2>
-      </div>
-      <!--Timer-->
-      <h1 id="timer">00:04</h1>
-      <!--Button-->
-      <button id="stop">Start</button>
-      <!--Current Task-->
-      <p id="current-task">No tasks stored!</p>
+  </div>
+
+  <!--Settings Menu-->
+  <div id="settings" class="hidden">
+    <!-- <h2 id="setting-header">Settings</h2> -->
+  </div>
+
+  <!--Main Content-->
+  <div class="content">
+    <!--Break or focus indicator-->
+    <div class="break-focus">
+      <h2 id="focus">Focus</h2>
+      <h2 id="relax">Relax</h2>
     </div>
-    <footer class="footer">
-      <!--Pomo Info-->
-      <i id="mybtn" class="fas fa-question"></i>
-      <!--Audio Element-->
-      <audio id="phaseAudio" volume=".30" style="display: none;">
-    </footer>    
-  </body>
+    <!--Timer-->
+    <h1 id="timer">00:04</h1>
+    <!--Button-->
+    <button id="stop">Start</button>
+    <!--Current Task-->
+    <div id="current-task">No tasks stored!</div>
+  </div>
+  <footer class="footer">
+    <!--Pomo Info-->
+    <i id="info-button" class="fas fa-question"></i>
+    <!--Audio Element-->
+    <audio id="phase-audio" volume=".30" style="display: none;"></audio>
+  </footer>
+</body>
+
 </html>

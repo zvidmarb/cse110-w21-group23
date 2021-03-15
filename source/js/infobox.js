@@ -4,7 +4,7 @@ const info = document.getElementById('info')
 
 // Open info box when the question mark is clicked
 // (We need to set this up with our question mark icon)
-const btn = document.getElementById('mybtn')
+const btn = document.getElementById('info-button')
 
 /**
  * Open info box when the question mark is clicked
@@ -15,7 +15,7 @@ btn.onclick = function () {
 }
 
 // Close the Info Box when we click on the x
-const close = document.getElementsByClassName('close')[0]
+const close = document.getElementById('info-close')
 
 /**
  * Close the Info Box when we click on the x

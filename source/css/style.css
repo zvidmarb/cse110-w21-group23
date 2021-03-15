@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Roboto:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Roboto:wght@500;700;900&display=swap');
 
 html,
 body {
-  height: 97vh;
+  height: 100vh;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
   color: #fafaf2;
   font-size: 24px;
   display: grid;
+  margin: 0;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto auto 1fr;
   grid-template-areas:
@@ -47,7 +48,7 @@ header {
 
 #stop {
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   background-color: #56af97;
   border: none;
   color: #fafaf2;
@@ -61,19 +62,25 @@ header {
 }
 
 #bars {
+  cursor: pointer;
   margin-left: 1%;
+}
+
+#plus {
+  cursor: pointer;
 }
 
 #cogs {
   margin-right: 1%;
-}
-
-#tasks {
-  display: none;
+  cursor: pointer;
 }
 
 #info {
   display: none;
+}
+
+#info-button {
+  cursor: pointer;
 }
 
 #settings.hidden {
@@ -123,11 +130,11 @@ header {
 
 .footer {
   grid-area: footer-info;
-  margin-bottom: 0;
   justify-self: end;
   align-self: end;
   margin-right: 3%;
   flex-shrink: 0;
+  margin-bottom: 10pt;
 }
 
 .break-focus {
@@ -146,4 +153,35 @@ header {
   color: rgba(250, 250, 242, 0.2);
   margin-bottom: 0;
   margin-left: 1%;
+}
+
+.popup-header {
+  background-color: #56af97 !important;
+  color: #fafaf2 !important;
+  position: relative;
+  display: block;
+  height: 2.5em;
+}
+
+.popup-header > h2 {
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0 auto;
+}
+
+.popup-header > .close {
+  text-decoration: none;
+  position: absolute;
+  top: 0.3em;
+  font-size: 1.5em;
+  display: inline-block;
+  right: 5%;
+  transition: 0.3s;
+  color: inherit;
+}
+
+.close:hover {
+  color: #c3c8c0;
+  cursor: pointer;
 }
