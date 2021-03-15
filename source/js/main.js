@@ -7,6 +7,7 @@ const settingsButton = document.getElementById('cogs')
 const settingsMenu = document.getElementById('settings')
 const focusing = document.getElementById('focus')
 const relaxing = document.getElementById('relax')
+const soundEffect = document.getElementById('phaseAudio')
 
 const settings = {}
 let interval // used for counting down the timer
@@ -68,6 +69,35 @@ function startTimer () {
 }
 
 /**
+ * Play a sound clip whenever the timer stops.
+ * @param {string} state - The state we are exiting, to determine what sound to play
+ */
+function playSound(state) {
+  let file
+
+  switch (state) {
+    case 'short_break':
+      // We exited a short break and are entering a Pomo
+      // TODO FIND SOUND
+      file = "naomi-boot-clip.mp3"
+      break
+    case 'long_break':
+      // We exited a long break and are entering a Pomo
+      // TODO FIND SOUND
+      file = "big-dipper.mp3"
+      break
+    default:
+      // Assume we exited a Pomo
+      // TODO FIND SOUND
+      file = "8-startup-sound.mp3"
+      break
+  }
+
+  soundEffect.setAttribute('src', `sound/${file}`)
+  soundEffect.play()
+}
+
+/**
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
  */
@@ -99,6 +129,9 @@ function countDown (countDownTime) {
   if (minute === '00' && second === '00') {
     // stop timer
     clearInterval(interval)
+
+    // play the sound effect
+    playSound(identifier)
 
     // check identifier
     if (identifier === 'pomo') {
@@ -141,7 +174,7 @@ function resetTimer () {
  * @param {string} desc - The longer description of the setting
  * @param {*} def - The default value of the setting
  */
-function addSetting (name, title, desc, def, cb) {
+function addSetting (name, title, desc, def, cb, min = 1, max = 1000) {
   // Add the setting to our list, and set it to default
   settings[name] = def
   cb(def)
@@ -153,8 +186,8 @@ function addSetting (name, title, desc, def, cb) {
   label.textContent = title
   const input = document.createElement('input')
   input.setAttribute('type', 'number')
-  input.setAttribute('min', '1')
-  input.setAttribute('max', '1000')
+  input.setAttribute('min', min)
+  input.setAttribute('max', max)
   input.setAttribute('class', 'setting-input')
   input.setAttribute('id', name)
   input.setAttribute('name', name)
@@ -164,15 +197,16 @@ function addSetting (name, title, desc, def, cb) {
 
   // Create event listener
   input.onchange = function (event) {
-    if (input.value < 1) {
-      input.value = 1
-    } else if (input.value > 1000) {
-      input.value = 1000
+    if (parseInt(input.value) < parseInt(input.getAttribute('min'))) {
+      input.value = input.getAttribute('min')
+    } else if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
+      input.value = input.getAttribute('max')
     }
 
     const newValue = input.value
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
+    console.log("new", name, newValue)
     cb(newValue)
     resetTimer()
   }
@@ -194,7 +228,7 @@ window.onload = function () {
   // Settings
   addSetting(
     'pomos_before_long_break',
-    'Pomos before long break',
+    'Pomos before long break:',
     'The number of pomos that should be completed before a long break occurs.',
     4,
     value => {
@@ -231,6 +265,18 @@ window.onload = function () {
       console.log(value)
       longBreak = value + ':00'
     }
+  )
+  addSetting(
+    'phase_audio_volume',
+    'Sound effect volume:',
+    'The volume the sound effect that plays .',
+    30,
+    value => {
+      console.log(value)
+      soundEffect.volume = parseInt(value)/100
+    },
+    0,
+    100
   )
 
   // Load default settings
