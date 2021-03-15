@@ -173,7 +173,7 @@ function checkToComplete (e) {
 function renderTopTask () {
   currentTask.innerHTML = ''
   // if there are still ongoing tasks, append the next one to the top task
-  if (ongoingArr[0] != undefined) {
+  if (ongoingArr[0] !== undefined && ongoingArr[0] !== null) {
     const nextTaskName = ongoingTasks.querySelector('li').querySelector('p').textContent
     currentTask.appendChild(createNewTask(nextTaskName, 'topTask', false, false))
   } else {
@@ -209,7 +209,7 @@ function editTask (e) {
   inputField.setAttribute('maxLength', '50')
 
   const nodes = Array.from(ongoingTasks.children) // get all children of the ol
-  index = nodes.indexOf(taskItem) // get the index of the task that was clicked on
+  let index = nodes.indexOf(taskItem) // get the index of the task that was clicked on
 
   ongoingTasks.innerHTML = '' // clear all the tasks
   for (let i = 0; i < index; i++) {
