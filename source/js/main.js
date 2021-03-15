@@ -174,7 +174,7 @@ function resetTimer () {
  * @param {string} desc - The longer description of the setting
  * @param {*} def - The default value of the setting
  */
-function addSetting (name, title, desc, def, cb, min = 1, max = 1000) {
+function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
   // Add the setting to our list, and set it to default
   settings[name] = def
   cb(def)
