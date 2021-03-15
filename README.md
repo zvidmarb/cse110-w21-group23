@@ -13,10 +13,21 @@ We have recorded a video to explain how our cicd pipeline works, if you are inte
 
 The full design documentation of our pomo app is under **/specs** folder.
 
-- All **architecture decision record (adr)** is [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/specs/adrs).
+- We have five **architecture decision records (adr)**, and all adr is [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/specs/adrs).
 
 - You can find the pitch document using this [link](https://github.com/zvidmarb/cse110-w21-group23/blob/master/specs/pitch/Pomodoro%20Pitch.pdf). The pitch document contain the topics of risks and rabbit holes as well as a visual representation of what you are doing in the form of system diagrams and wireframes. Our pitch also have a statement of purpose as well as a section on user personas. 
 
+- Our UI designer creates multiple version of the pomo web, [check it out](https://github.com/zvidmarb/cse110-w21-group23/tree/master/specs/interface)!
+
 - First version of design style guide is [here](https://github.com/zvidmarb/cse110-w21-group23/blob/master/specs/style/DesignGuidev1.pdf).
 
+- We come up we two [user personas](https://github.com/zvidmarb/cse110-w21-group23/tree/master/specs/users) for who might using our pomo web.
+
+## Source 
+- 
+
 ## Test
+- Test documentation
+- Unit test
+- Cypress
+- 
