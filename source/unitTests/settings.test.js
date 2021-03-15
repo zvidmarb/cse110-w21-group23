@@ -18,7 +18,6 @@ beforeEach(() => {
 
 describe('Unit tests to ensure settings functionality.', () => {
   test('Make sure the settings menu opens/closes on click', () => {
-    const { _, _, _, addSetting } = require('../js/main')
     // Get our settings box
     const settingsMenu = document.getElementById('settings')
     const settingsButton = document.getElementById('cogs')
@@ -36,7 +35,7 @@ describe('Unit tests to ensure settings functionality.', () => {
   })
 
   test('Ensure addSetting properly functions', () => {
-    const { _, _, _, addSetting } = require('../js/main')
+    const { _, __, ___, addSetting } = require('../js/main')
     // Setting value for testing
     let testSetting
 

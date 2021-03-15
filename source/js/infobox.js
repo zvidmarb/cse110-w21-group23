@@ -15,7 +15,7 @@ btn.onclick = function () {
 }
 
 // Close the Info Box when we click on the x
-const close = document.getElementsByClassName('close')[1]
+const close = document.getElementById('infoClose')
 
 /**
  * Close the Info Box when we click on the x

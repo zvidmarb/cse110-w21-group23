@@ -28,9 +28,9 @@ test('a lot of tests for the task bar', () => {
   const currentTask = document.getElementById('current-task') // the top task
 
   openNav()
-  expect(document.getElementById('taskbar').style.width).toBe('350px')
+  expect(document.getElementById('taskbar').style.display).toBe('flex')
   closeNav()
-  expect(document.getElementById('taskbar').style.width).toBe('0px')
+  expect(document.getElementById('taskbar').style.display).toBe('none')
 
   // add two tasks: "quiz" and "exam"
   addNewTask('quiz')

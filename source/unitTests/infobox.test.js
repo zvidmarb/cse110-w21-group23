@@ -19,7 +19,7 @@ describe('Test if block active when it is clicked', () => {
   test('Click is working', () => {
     const btn = document.getElementById('info-button')
     const info = document.getElementById('info')
-    const close = document.getElementsByClassName('close')[0]
+    const close = document.getElementById('infoClose')
     btn.click()
     expect(info.style.display).toBe('block')
     close.click()
