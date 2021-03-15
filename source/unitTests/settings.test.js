@@ -35,7 +35,8 @@ describe('Unit tests to ensure settings functionality.', () => {
   })
 
   test('Ensure addSetting properly functions', () => {
-    const { _, __, ___, ____, addSetting } = require('../js/main')
+    // const { _, __, ___, ____, addSetting } = require('../js/main')
+    const { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting } = require('../js/main')
     // Setting value for testing
     let testSetting
 
@@ -59,5 +60,10 @@ describe('Unit tests to ensure settings functionality.', () => {
     testSettingInput.onchange()
 
     expect(testSetting).toBe(9)
+
+    changeButtonText()
+    enterPomo()
+    enterShortBreak()
+    enterLongBreak()
   })
 })
