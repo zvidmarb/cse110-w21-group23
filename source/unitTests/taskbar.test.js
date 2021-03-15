@@ -20,7 +20,7 @@ beforeAll(() => {
 test('a lot of tests for the task bar', () => {
   const {
     openNav, closeNav, appendAllTasks, addNewTask
-  } = require('../taskbar')
+  } = require('../js/taskbar')
 
   const ongoingTasks = document.getElementById('ongoing-tasks') // ol of the ongoing tasks
   const addBtn = document.getElementById('plus')

@@ -1,5 +1,3 @@
-let addSetting
-
 document.body.innerHTML = `
   <p id='counter'>Pomo: 1&frasl;4</p>
   <h1 id='timer'>00:07</h1>
@@ -15,11 +13,12 @@ document.body.innerHTML = `
   `
 
 beforeEach(() => {
-  addSetting = require('../main.js')
+  require('../js/main.js')
 })
 
 describe('Unit tests to ensure settings functionality.', () => {
   test('Make sure the settings menu opens/closes on click', () => {
+    const { _, _, _, addSetting } = require('../js/main')
     // Get our settings box
     const settingsMenu = document.getElementById('settings')
     const settingsButton = document.getElementById('cogs')
@@ -37,6 +36,7 @@ describe('Unit tests to ensure settings functionality.', () => {
   })
 
   test('Ensure addSetting properly functions', () => {
+    const { _, _, _, addSetting } = require('../js/main')
     // Setting value for testing
     let testSetting
 

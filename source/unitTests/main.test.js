@@ -6,11 +6,11 @@ beforeAll(() => {
 <h2 id="focus">Focus</h2>
 <h2 id="relax">Relax</h2>
 `
-  require('../main.js')
+  require('../js/main.js')
 })
 
 test('a lot of tests for main.js', (done) => {
-  const { enterPomo, enterShortBreak, enterLongBreak } = require('../main')
+  const { enterPomo, enterShortBreak, enterLongBreak, _ } = require('../js/main')
   const focusing = document.getElementById('focus')
   const relaxing = document.getElementById('relax')
   // wait for 1.5 seconds for the timer to switch to short break
