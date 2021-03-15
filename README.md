@@ -24,7 +24,11 @@ The full design documentation of our pomo app is under **/specs** folder.
 - We come up we two [user personas](https://github.com/zvidmarb/cse110-w21-group23/tree/master/specs/users) for who might using our pomo web.
 
 ## Source 
-- 
+[\source](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source) folder includes all souce code and test code of pomo web.\
+We separate the code in three part, css code in \css folder, java script code in \js folder, and the index.html is in the root of \source.
+
+- Unit test
+If you want to know more about the unit test, click here.
 
 ## Test
 - Test documentation
