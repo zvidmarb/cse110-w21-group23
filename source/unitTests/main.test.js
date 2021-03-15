@@ -17,7 +17,7 @@ beforeAll(() => {
 })
 
 test('a lot of tests for main.js', (done) => {
-  const { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, _ } = require('../js/main')
+  const { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting } = require('../js/main')
   const focusing = document.getElementById('focus')
   const relaxing = document.getElementById('relax')
   // wait for 1.5 seconds for the timer to switch to short break
@@ -46,4 +46,14 @@ test('a lot of tests for main.js', (done) => {
 
   changeButtonText()
   changeButtonText()
+
+  addSetting(
+    'test_setting',
+    'Unused',
+    'Internal setting used for testing.',
+    5,
+    value => {
+      testSetting = parseInt(value)
+    }
+  )
 })
