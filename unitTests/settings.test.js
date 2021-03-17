@@ -1,5 +1,3 @@
-let addSetting
-
 document.body.innerHTML = `
   <p id='counter'>Pomo: 1&frasl;4</p>
   <h1 id='timer'>00:07</h1>
@@ -15,7 +13,7 @@ document.body.innerHTML = `
   `
 
 beforeEach(() => {
-  addSetting = require('../main.js')
+  require('../js/main.js')
 })
 
 describe('Unit tests to ensure settings functionality.', () => {
@@ -37,6 +35,8 @@ describe('Unit tests to ensure settings functionality.', () => {
   })
 
   test('Ensure addSetting properly functions', () => {
+    // const { _, __, ___, ____, addSetting } = require('../js/main')
+    const { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting } = require('../js/main')
     // Setting value for testing
     let testSetting
 
@@ -60,5 +60,10 @@ describe('Unit tests to ensure settings functionality.', () => {
     testSettingInput.onchange()
 
     expect(testSetting).toBe(9)
+
+    changeButtonText()
+    enterPomo()
+    enterShortBreak()
+    enterLongBreak()
   })
 })
