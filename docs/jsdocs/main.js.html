@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addSetting">addSetting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#changeButtonText">changeButtonText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#countDown">countDown</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterLongBreak">enterLongBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterPomo">enterPomo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterShortBreak">enterShortBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makeZero">makeZero</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#playSound">playSound</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#resetTimer">resetTimer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#startTimer">startTimer</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addNewTask">addNewTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addSetting">addSetting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#appendAllTasks">appendAllTasks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#changeButtonText">changeButtonText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkToComplete">checkToComplete</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkTopTask">checkTopTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#countDown">countDown</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createNewTask">createNewTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteTask">deleteTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editTask">editTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterLongBreak">enterLongBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterPomo">enterPomo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterShortBreak">enterShortBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makeZero">makeZero</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#playSound">playSound</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#renderTopTask">renderTopTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#resetTimer">resetTimer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#startTimer">startTimer</a></span></li>
 </nav>
 
 <div id="main">
@@ -48,7 +48,7 @@ const settingsButton = document.getElementById('cogs')
 const settingsMenu = document.getElementById('settings')
 const focusing = document.getElementById('focus')
 const relaxing = document.getElementById('relax')
-const soundEffect = document.getElementById('phaseAudio')
+const soundEffect = document.getElementById('phase-audio')
 
 const settings = {}
 let interval // used for counting down the timer
@@ -102,7 +102,7 @@ function startTimer () {
       break
   }
 
-  initMinute = parseInt(initTime.slice(0, 2))
+  initMinute = parseInt(initTime.toString().slice(0, 2))
 
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000
@@ -113,24 +113,24 @@ function startTimer () {
  * Play a sound clip whenever the timer stops.
  * @param {string} state - The state we are exiting, to determine what sound to play
  */
-function playSound(state) {
+function playSound (state) {
   let file
 
   switch (state) {
     case 'short_break':
       // We exited a short break and are entering a Pomo
       // TODO FIND SOUND
-      file = "naomi-boot-clip.mp3"
+      file = 'naomi-boot-clip.mp3'
       break
     case 'long_break':
       // We exited a long break and are entering a Pomo
       // TODO FIND SOUND
-      file = "big-dipper.mp3"
+      file = 'big-dipper.mp3'
       break
     default:
       // Assume we exited a Pomo
       // TODO FIND SOUND
-      file = "8-startup-sound.mp3"
+      file = '8-startup-sound.mp3'
       break
   }
 
@@ -247,7 +247,7 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     const newValue = input.value
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
-    console.log("new", name, newValue)
+    console.log('new', name, newValue)
     cb(newValue)
     resetTimer()
   }
@@ -314,7 +314,7 @@ window.onload = function () {
     30,
     value => {
       console.log(value)
-      soundEffect.volume = parseInt(value)/100
+      soundEffect.volume = parseInt(value) / 100
     },
     0,
     100
@@ -395,8 +395,7 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-// module.exports = enterPomo
-module.exports = addSetting
+module.exports = { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting }
 </code></pre>
         </article>
     </section>
@@ -409,7 +408,7 @@ module.exports = addSetting
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Mar 15 2021 02:35:57 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Wed Mar 17 2021 01:06:14 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
