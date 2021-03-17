@@ -99,6 +99,9 @@ function playSound (state) {
   soundEffect.play()
 }
 
+/**
+ * Update our settings values only if we are not in the middle of a Pomo
+ */
 function updateSettings () {
   if (identifier !== 'pomo' || startButton.textContent === 'Start') {
     console.log('Updating settings')
