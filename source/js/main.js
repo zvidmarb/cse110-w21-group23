@@ -158,16 +158,12 @@ function countDown (countDownTime) {
       console.log(pomoCount, totalCount)
       // Internally, we increment here. We don't show this until the break is over, though.
       if (pomoCount >= totalCount) {
-        identifier = 'long_break'
         enterLongBreak()
       } else {
-        identifier = 'short_break'
         enterShortBreak()
       }
     } else if (identifier === 'short_break' || identifier === 'long_break') {
-      identifier = 'pomo'
-      // increment counter by 1 after short break
-      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+      // Enter a pomo
       enterPomo()
     }
 
@@ -347,6 +343,7 @@ window.onload = function () {
 function enterShortBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'short_break'
     timer.innerHTML = shortBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
@@ -386,6 +383,7 @@ function enterPomo () {
 function enterLongBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'long_break'
     timer.innerHTML = longBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
