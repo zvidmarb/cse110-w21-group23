@@ -10,6 +10,7 @@ const relaxing = document.getElementById('relax')
 const soundEffect = document.getElementById('phase-audio')
 
 const settings = {}
+const outdatedSettings = {}
 let interval // used for counting down the timer
 let pomoCount = 1
 
@@ -33,6 +34,7 @@ function changeButtonText () {
     startTimer()
   } else {
     startButton.textContent = 'Start'
+    updateSettings()
     resetTimer()
   }
 }
@@ -98,6 +100,24 @@ function playSound (state) {
 }
 
 /**
+ * Update our settings values only if we are not in the middle of a Pomo
+ */
+function updateSettings () {
+  if (identifier !== 'pomo' || startButton.textContent === 'Start') {
+    console.log('Updating settings')
+    for (const [key, cbv] of Object.entries(outdatedSettings)) {
+      console.log('Update:', key)
+      // Callback(newValue)
+      cbv[0](cbv[1])
+
+      delete outdatedSettings[key]
+    }
+  } else {
+    console.log('Delaying settings update until we are not in progressing')
+  }
+}
+
+/**
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
  */
@@ -137,20 +157,18 @@ function countDown (countDownTime) {
     if (identifier === 'pomo') {
       console.log(pomoCount, totalCount)
       // Internally, we increment here. We don't show this until the break is over, though.
-      pomoCount += 1
-      if (pomoCount - 1 === totalCount) {
-        identifier = 'long_break'
+      if (pomoCount >= totalCount) {
         enterLongBreak()
       } else {
-        identifier = 'short_break'
         enterShortBreak()
       }
     } else if (identifier === 'short_break' || identifier === 'long_break') {
-      identifier = 'pomo'
-      // increment counter by 1 after short break
-      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
+      // Enter a pomo
       enterPomo()
     }
+
+    // Update our outdated settings
+    updateSettings()
   }
 }
 
@@ -196,8 +214,18 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
   settingsMenu.appendChild(input)
 
   // Create event listener
-  input.onchange = function (event) {
-    if (parseInt(input.value) < parseInt(input.getAttribute('min'))) {
+  input.onchange = input.onkeyup = function (event) {
+    // Ignore the key up event when we press delete and the input is empty
+    if (event !== undefined && event.type === 'keyup' && (event.key === 'Backspace' || event.keyCode === 46) && input.value === '') {
+      return
+    }
+
+    // Remove decimals
+    input.value = input.value.split('.')[0]
+
+    if (input.value === '') {
+      input.value = input.getAttribute('min')
+    } else if (parseInt(input.value) < parseInt(input.getAttribute('min'))) {
       input.value = input.getAttribute('min')
     } else if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
       input.value = input.getAttribute('max')
@@ -207,8 +235,10 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
     console.log('new', name, newValue)
-    cb(newValue)
-    resetTimer()
+
+    // Add the changed setting to out list of outdated settings, then attempt to resolve or delay if we are running a timer
+    outdatedSettings[name] = [cb, newValue]
+    updateSettings()
   }
 }
 
@@ -222,7 +252,6 @@ window.onload = function () {
 
   settingsButton.onclick = function () {
     settingsMenu.classList.toggle('hidden')
-    resetTimer()
   }
 
   // Settings
@@ -234,6 +263,7 @@ window.onload = function () {
     value => {
       console.log(value)
       totalCount = parseInt(value)
+      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
     }
   )
   addSetting(
@@ -244,6 +274,10 @@ window.onload = function () {
     value => {
       console.log(value)
       pomo = value + ':00'
+
+      if (identifier === 'pomo' && startButton.textContent === 'Start') {
+        timer.innerHTML = pomo
+      }
     }
   )
   addSetting(
@@ -254,6 +288,10 @@ window.onload = function () {
     value => {
       console.log(value)
       shortBreak = value + ':00'
+
+      if (identifier === 'short_break' && startButton.textContent === 'Start') {
+        timer.innerHTML = shortBreak
+      }
     }
   )
   addSetting(
@@ -264,6 +302,10 @@ window.onload = function () {
     value => {
       console.log(value)
       longBreak = value + ':00'
+
+      if (identifier === 'long_break' && startButton.textContent === 'Start') {
+        timer.innerHTML = longBreak
+      }
     }
   )
   addSetting(
@@ -301,6 +343,7 @@ window.onload = function () {
 function enterShortBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'short_break'
     timer.innerHTML = shortBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
@@ -340,6 +383,7 @@ function enterPomo () {
 function enterLongBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'long_break'
     timer.innerHTML = longBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
