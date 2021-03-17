@@ -10,6 +10,7 @@ const relaxing = document.getElementById('relax')
 const soundEffect = document.getElementById('phase-audio')
 
 const settings = {}
+let outdatedSettings = {}
 let interval // used for counting down the timer
 let pomoCount = 1
 
@@ -33,6 +34,7 @@ function changeButtonText () {
     startTimer()
   } else {
     startButton.textContent = 'Start'
+    updateSettings()
     resetTimer()
   }
 }
@@ -97,6 +99,21 @@ function playSound (state) {
   soundEffect.play()
 }
 
+function updateSettings () {
+  if (identifier !== 'pomo' || startButton.textContent === 'Start') {
+    console.log('Updating settings')
+    for (const [key, cbv] of Object.entries(outdatedSettings)) {
+      console.log("Update:", key)
+      // Callback(newValue)
+      cbv[0](cbv[1])
+
+      delete outdatedSettings[key]
+    }
+  } else {
+    console.log('Delaying settings update until we are not in progressing')
+  }
+}
+
 /**
  * Counts the timer down.
  * @param {number} countDownTime - The time we will count down.
@@ -151,6 +168,9 @@ function countDown (countDownTime) {
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
       enterPomo()
     }
+    
+    // Update our outdated settings
+    updateSettings()
   }
 }
 
@@ -207,8 +227,11 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
     console.log('new', name, newValue)
-    cb(newValue)
-    resetTimer()
+    //cb(newValue)
+    //resetTimer()
+    // Add the changed setting to out list of outdated settings, then attempt to resolve or delay if we are running a timer
+    outdatedSettings[name] = [cb, newValue]
+    updateSettings()
   }
 }
 
@@ -222,7 +245,7 @@ window.onload = function () {
 
   settingsButton.onclick = function () {
     settingsMenu.classList.toggle('hidden')
-    resetTimer()
+    //resetTimer()
   }
 
   // Settings
@@ -234,6 +257,7 @@ window.onload = function () {
     value => {
       console.log(value)
       totalCount = parseInt(value)
+      counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
     }
   )
   addSetting(
@@ -244,6 +268,10 @@ window.onload = function () {
     value => {
       console.log(value)
       pomo = value + ':00'
+
+      if (identifier == 'pomo' && startButton.textContent === 'Start') {
+        timer.innerHTML = pomo
+      }
     }
   )
   addSetting(
@@ -254,6 +282,10 @@ window.onload = function () {
     value => {
       console.log(value)
       shortBreak = value + ':00'
+
+      if (identifier == 'short_break' && startButton.textContent === 'Start') {
+        timer.innerHTML = shortBreak
+      }
     }
   )
   addSetting(
@@ -264,6 +296,10 @@ window.onload = function () {
     value => {
       console.log(value)
       longBreak = value + ':00'
+
+      if (identifier == 'long_break' && startButton.textContent === 'Start') {
+        timer.innerHTML = longBreak
+      }
     }
   )
   addSetting(
