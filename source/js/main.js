@@ -221,7 +221,7 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
   // Create event listener
   input.onchange = input.onkeyup = function (event) {
     // Ignore the key up event when we press delete and the input is empty
-    if (event !== undefined && event.type == 'keyup' && (event.key == 'Backspace' || event.keyCode === 46) && input.value == '') {
+    if (event !== undefined && event.type === 'keyup' && (event.key === 'Backspace' || event.keyCode === 46) && input.value === '') {
       return
     }
 
@@ -235,8 +235,6 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     } else if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
       input.value = input.getAttribute('max')
     }
-
-    
 
     const newValue = input.value
     settings[name] = newValue
