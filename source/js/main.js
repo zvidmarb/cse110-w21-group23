@@ -219,7 +219,12 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
   settingsMenu.appendChild(input)
 
   // Create event listener
-  input.onchange = function (event) {
+  input.onchange = input.onkeyup = function (event) {
+    // Ignore the key up event when we press delete and the input is empty
+    if (event !== undefined && event.type == 'keyup' && (event.key == 'Backspace' || event.keyCode === 46) && input.value == '') {
+      return
+    }
+
     // Remove decimals
     input.value = input.value.split('.')[0]
 
