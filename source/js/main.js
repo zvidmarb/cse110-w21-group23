@@ -10,7 +10,7 @@ const relaxing = document.getElementById('relax')
 const soundEffect = document.getElementById('phase-audio')
 
 const settings = {}
-let outdatedSettings = {}
+const outdatedSettings = {}
 let interval // used for counting down the timer
 let pomoCount = 1
 
@@ -106,7 +106,7 @@ function updateSettings () {
   if (identifier !== 'pomo' || startButton.textContent === 'Start') {
     console.log('Updating settings')
     for (const [key, cbv] of Object.entries(outdatedSettings)) {
-      console.log("Update:", key)
+      console.log('Update:', key)
       // Callback(newValue)
       cbv[0](cbv[1])
 
@@ -171,7 +171,7 @@ function countDown (countDownTime) {
       counter.innerHTML = `Pomo: ${pomoCount}&frasl;${totalCount}`
       enterPomo()
     }
-    
+
     // Update our outdated settings
     updateSettings()
   }
@@ -233,8 +233,7 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
     console.log('new', name, newValue)
-    //cb(newValue)
-    //resetTimer()
+
     // Add the changed setting to out list of outdated settings, then attempt to resolve or delay if we are running a timer
     outdatedSettings[name] = [cb, newValue]
     updateSettings()
@@ -251,7 +250,6 @@ window.onload = function () {
 
   settingsButton.onclick = function () {
     settingsMenu.classList.toggle('hidden')
-    //resetTimer()
   }
 
   // Settings
@@ -275,7 +273,7 @@ window.onload = function () {
       console.log(value)
       pomo = value + ':00'
 
-      if (identifier == 'pomo' && startButton.textContent === 'Start') {
+      if (identifier === 'pomo' && startButton.textContent === 'Start') {
         timer.innerHTML = pomo
       }
     }
@@ -289,7 +287,7 @@ window.onload = function () {
       console.log(value)
       shortBreak = value + ':00'
 
-      if (identifier == 'short_break' && startButton.textContent === 'Start') {
+      if (identifier === 'short_break' && startButton.textContent === 'Start') {
         timer.innerHTML = shortBreak
       }
     }
@@ -303,7 +301,7 @@ window.onload = function () {
       console.log(value)
       longBreak = value + ':00'
 
-      if (identifier == 'long_break' && startButton.textContent === 'Start') {
+      if (identifier === 'long_break' && startButton.textContent === 'Start') {
         timer.innerHTML = longBreak
       }
     }
