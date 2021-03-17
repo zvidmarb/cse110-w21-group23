@@ -220,14 +220,18 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
 
   // Create event listener
   input.onchange = function (event) {
-    if (parseInt(input.value) < parseInt(input.getAttribute('min'))) {
+    // Remove decimals
+    input.value = input.value.split('.')[0]
+
+    if (input.value === '') {
+      input.value = input.getAttribute('min')
+    } else if (parseInt(input.value) < parseInt(input.getAttribute('min'))) {
       input.value = input.getAttribute('min')
     } else if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
       input.value = input.getAttribute('max')
     }
 
-    // Remove decimals
-    input.value = input.value.split('.')[0]
+    
 
     const newValue = input.value
     settings[name] = newValue
