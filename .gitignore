@@ -121,3 +121,6 @@ package-lock.json
 docs/jsdocs/scripts/linenumber.js
 docs/jsdocs/scripts/prettify/lang-css.js
 docs/jsdocs/scripts/prettify/prettify.js
+
+# vscode
+.vscode/
