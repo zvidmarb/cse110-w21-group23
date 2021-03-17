@@ -158,7 +158,7 @@ function countDown (countDownTime) {
       console.log(pomoCount, totalCount)
       // Internally, we increment here. We don't show this until the break is over, though.
       pomoCount += 1
-      if (pomoCount - 1 === totalCount) {
+      if (pomoCount - 1 >= totalCount) {
         identifier = 'long_break'
         enterLongBreak()
       } else {
