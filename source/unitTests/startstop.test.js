@@ -35,7 +35,7 @@ test('Ensure when start/stop is pressed, text switches to the opposite', () => {
 
 //   //start timer
 //   changeButtonText()
-//   jest.advanceTimersByTime(1000); 
+//   jest.advanceTimersByTime(1000);
 //   expect(timer.innerHTML).not.toBe(maxTime)
 
 //   changeButtonText()
