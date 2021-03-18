@@ -398,4 +398,4 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-module.exports = { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting }
+module.exports = { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting, playSound }
