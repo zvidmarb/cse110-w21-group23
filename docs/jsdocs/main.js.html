@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addSetting">addSetting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#changeButtonText">changeButtonText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#countDown">countDown</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterLongBreak">enterLongBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterPomo">enterPomo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterShortBreak">enterShortBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makeZero">makeZero</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#playSound">playSound</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#resetTimer">resetTimer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#startTimer">startTimer</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addNewTask">addNewTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addSetting">addSetting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#appendAllTasks">appendAllTasks</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#changeButtonText">changeButtonText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkToComplete">checkToComplete</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkTopTask">checkTopTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#countDown">countDown</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createNewTask">createNewTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteTask">deleteTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#editTask">editTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterLongBreak">enterLongBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterPomo">enterPomo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#enterShortBreak">enterShortBreak</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#makeZero">makeZero</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#playSound">playSound</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#renderTopTask">renderTopTask</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#resetTimer">resetTimer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#startTimer">startTimer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateSettings">updateSettings</a></span></li>
 </nav>
 
 <div id="main">
@@ -48,9 +48,10 @@ const settingsButton = document.getElementById('cogs')
 const settingsMenu = document.getElementById('settings')
 const focusing = document.getElementById('focus')
 const relaxing = document.getElementById('relax')
-const soundEffect = document.getElementById('phaseAudio')
+const soundEffect = document.getElementById('phase-audio')
 
 const settings = {}
+const outdatedSettings = {}
 let interval // used for counting down the timer
 let pomoCount = 1
 
@@ -74,6 +75,7 @@ function changeButtonText () {
     startTimer()
   } else {
     startButton.textContent = 'Start'
+    updateSettings()
     resetTimer()
   }
 }
@@ -102,7 +104,7 @@ function startTimer () {
       break
   }
 
-  initMinute = parseInt(initTime.slice(0, 2))
+  initMinute = parseInt(initTime.toString().slice(0, 2))
 
   const countDownTime =
     new Date().getTime() + initMinute * 60 * 1000
@@ -113,29 +115,47 @@ function startTimer () {
  * Play a sound clip whenever the timer stops.
  * @param {string} state - The state we are exiting, to determine what sound to play
  */
-function playSound(state) {
+function playSound (state) {
   let file
 
   switch (state) {
     case 'short_break':
       // We exited a short break and are entering a Pomo
       // TODO FIND SOUND
-      file = "naomi-boot-clip.mp3"
+      file = 'naomi-boot-clip.mp3'
       break
     case 'long_break':
       // We exited a long break and are entering a Pomo
       // TODO FIND SOUND
-      file = "big-dipper.mp3"
+      file = 'big-dipper.mp3'
       break
     default:
       // Assume we exited a Pomo
       // TODO FIND SOUND
-      file = "8-startup-sound.mp3"
+      file = '8-startup-sound.mp3'
       break
   }
 
   soundEffect.setAttribute('src', `sound/${file}`)
   soundEffect.play()
+}
+
+/**
+ * Update our settings values only if we are not in the middle of a Pomo
+ */
+function updateSettings () {
+  if (identifier !== 'pomo' || startButton.textContent === 'Start') {
+    console.log('Updating settings')
+    for (const [key, cbv] of Object.entries(outdatedSettings)) {
+      console.log('Update:', key)
+      // Callback(newValue)
+      cbv[0](cbv[1])
+
+      delete outdatedSettings[key]
+    }
+  } else {
+    console.log('Delaying settings update until we are not in progressing')
+  }
 }
 
 /**
@@ -178,20 +198,18 @@ function countDown (countDownTime) {
     if (identifier === 'pomo') {
       console.log(pomoCount, totalCount)
       // Internally, we increment here. We don't show this until the break is over, though.
-      pomoCount += 1
-      if (pomoCount - 1 === totalCount) {
-        identifier = 'long_break'
+      if (pomoCount >= totalCount) {
         enterLongBreak()
       } else {
-        identifier = 'short_break'
         enterShortBreak()
       }
     } else if (identifier === 'short_break' || identifier === 'long_break') {
-      identifier = 'pomo'
-      // increment counter by 1 after short break
-      counter.innerHTML = `Pomo: ${pomoCount}&amp;frasl;${totalCount}`
+      // Enter a pomo
       enterPomo()
     }
+
+    // Update our outdated settings
+    updateSettings()
   }
 }
 
@@ -237,8 +255,18 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
   settingsMenu.appendChild(input)
 
   // Create event listener
-  input.onchange = function (event) {
-    if (parseInt(input.value) &lt; parseInt(input.getAttribute('min'))) {
+  input.onchange = input.onkeyup = function (event) {
+    // Ignore the key up event when we press delete and the input is empty
+    if (event !== undefined &amp;&amp; event.type === 'keyup' &amp;&amp; (event.key === 'Backspace' || event.keyCode === 46) &amp;&amp; input.value === '') {
+      return
+    }
+
+    // Remove decimals
+    input.value = input.value.split('.')[0]
+
+    if (input.value === '') {
+      input.value = input.getAttribute('min')
+    } else if (parseInt(input.value) &lt; parseInt(input.getAttribute('min'))) {
       input.value = input.getAttribute('min')
     } else if (parseInt(input.value) > parseInt(input.getAttribute('max'))) {
       input.value = input.getAttribute('max')
@@ -247,9 +275,11 @@ function addSetting (name, title, desc, def, cb, min = 1, max = 60) {
     const newValue = input.value
     settings[name] = newValue
     window.localStorage.setItem(name, newValue)
-    console.log("new", name, newValue)
-    cb(newValue)
-    resetTimer()
+    console.log('new', name, newValue)
+
+    // Add the changed setting to out list of outdated settings, then attempt to resolve or delay if we are running a timer
+    outdatedSettings[name] = [cb, newValue]
+    updateSettings()
   }
 }
 
@@ -263,7 +293,6 @@ window.onload = function () {
 
   settingsButton.onclick = function () {
     settingsMenu.classList.toggle('hidden')
-    resetTimer()
   }
 
   // Settings
@@ -275,6 +304,7 @@ window.onload = function () {
     value => {
       console.log(value)
       totalCount = parseInt(value)
+      counter.innerHTML = `Pomo: ${pomoCount}&amp;frasl;${totalCount}`
     }
   )
   addSetting(
@@ -285,6 +315,10 @@ window.onload = function () {
     value => {
       console.log(value)
       pomo = value + ':00'
+
+      if (identifier === 'pomo' &amp;&amp; startButton.textContent === 'Start') {
+        timer.innerHTML = pomo
+      }
     }
   )
   addSetting(
@@ -295,6 +329,10 @@ window.onload = function () {
     value => {
       console.log(value)
       shortBreak = value + ':00'
+
+      if (identifier === 'short_break' &amp;&amp; startButton.textContent === 'Start') {
+        timer.innerHTML = shortBreak
+      }
     }
   )
   addSetting(
@@ -305,6 +343,10 @@ window.onload = function () {
     value => {
       console.log(value)
       longBreak = value + ':00'
+
+      if (identifier === 'long_break' &amp;&amp; startButton.textContent === 'Start') {
+        timer.innerHTML = longBreak
+      }
     }
   )
   addSetting(
@@ -314,7 +356,7 @@ window.onload = function () {
     30,
     value => {
       console.log(value)
-      soundEffect.volume = parseInt(value)/100
+      soundEffect.volume = parseInt(value) / 100
     },
     0,
     100
@@ -342,6 +384,7 @@ window.onload = function () {
 function enterShortBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'short_break'
     timer.innerHTML = shortBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
@@ -381,6 +424,7 @@ function enterPomo () {
 function enterLongBreak () {
   makeZero()
   setTimeout(() => {
+    identifier = 'long_break'
     timer.innerHTML = longBreak
     startButton.textContent = 'Start'
     focusing.style.color = 'rgba(250, 250, 242, 0.2)'
@@ -395,8 +439,7 @@ function makeZero () {
   timer.innerHTML = '00:00'
 }
 
-// module.exports = enterPomo
-module.exports = addSetting
+module.exports = { changeButtonText, enterPomo, enterShortBreak, enterLongBreak, addSetting }
 </code></pre>
         </article>
     </section>
@@ -409,7 +452,7 @@ module.exports = addSetting
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Mar 15 2021 02:35:57 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Thu Mar 18 2021 05:08:30 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

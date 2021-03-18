@@ -260,7 +260,7 @@ function editTask (e) {
  * @param {String} location - "ongoing", "completed", "topTask"
  * @param {boolean} canEdit - completed and top task cannot be edited
  * @param {boolean} canDelete - top task cannot be deleted
- * @returns
+ * @returns {Element} - the new task element
  */
 function createNewTask (taskName, location, canEdit, canDelete) {
   // create li

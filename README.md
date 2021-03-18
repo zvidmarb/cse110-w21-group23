@@ -25,8 +25,9 @@ The full design documentation of our pomo app is under **/specs** folder.
 
 ## Sprints
 #### Once we finished the design part and move on to build our pomo web, we start to have sprint section follow the guidance of agile.
-- Sprint 1()
-- Sprint 2()
+- Sprint 1 planning:
+  - 
+- Sprint 2 planning:
 
 ## Source 
 [\source](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source) folder includes all souce code and test code of pomo web.\
