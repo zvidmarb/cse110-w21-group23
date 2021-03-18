@@ -27,21 +27,19 @@ test('Ensure when start/stop is pressed, text switches to the opposite', () => {
   expect(startButton.textContent).toBe('Start')
 })
 
-/*
-test('Ensure when stop is pressed, the timer is reset to the max time', () => {
-  const { changeButtonText } = require('../js/main')
-  const maxTime = document.getElementById('timer').innerHTML // the max starting time
-  const timer = document.getElementById('timer')
-  jest.useFakeTimers()
+// test('Ensure when stop is pressed, the timer is reset to the max time', () => {
+//   const { changeButtonText } = require('../js/main')
+//   const maxTime = document.getElementById('timer').innerHTML // the max starting time
+//   const timer = document.getElementById('timer')
+//   jest.useFakeTimers()
 
+//   //start timer
+//   changeButtonText()
+//   jest.advanceTimersByTime(1000); 
+//   expect(timer.innerHTML).not.toBe(maxTime)
 
-  //start timer
-  changeButtonText()
-  jest.advanceTimersByTime(1000); 
-  expect(timer.innerHTML).not.toBe(maxTime)
-
-  changeButtonText()
-  console.log(timer.innerHTML)
-  console.log(maxTime);
-  expect(timer.innerHTML).toBe(maxTime)
-})*/
+//   changeButtonText()
+//   console.log(timer.innerHTML)
+//   console.log(maxTime);
+//   expect(timer.innerHTML).toBe(maxTime)
+// })
