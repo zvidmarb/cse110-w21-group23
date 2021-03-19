@@ -60,7 +60,7 @@ We mainly focus on the unit tests, and have some cypress test for the part that 
    ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/unitTest.png)
 
 - Cypress
-  - We did start/stop button and other small test on cypress for e2e test as well.
+  - We did start/stop button and other small test on cypress for e2e test as well (note that due to issues implementing a GitHub Action workflow and time restraints this was done by hand)
   ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/cypresstest.png)
   ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/cypressCoverage.jpeg)
 
