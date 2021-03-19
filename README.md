@@ -52,3 +52,15 @@ We separate the code in three part, css code in \css folder, java script code in
 - Unit test
 If you want to know more about the unit test, click [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source/unitTests).
 
+
+## Testing
+We mainly focus on the unit tests, and have some cypress test for the part that we cannot use unit test to test. We spent a lot of time on how to run both unit test and cypress test together and have an intergreted test coverage, but it does not allow us to do it, so we have separated test coveages.
+- Unit test
+  - We did most of testing on unit test, except the start/stop button. Below is the coverage of the unit test.\
+   ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/unitTest.png)
+
+- Cypress
+  - We did start/stop button and other small test on cypress for e2e test as well.
+  ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/cypresstest.png)
+  ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/cypressCoverage.jpeg)
+
