@@ -5,10 +5,11 @@ You can access pomo web using this [link](https://zvidmarb.github.io/cse110-w21-
 ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/pomoScreenShot.png)
 
 ## Final project videos
-[final video public version](https://www.youtube.com/watch?v=FrdpRCxJEmM&t=40s)
-[final video private version](https://www.youtube.com/watch?v=K8b0A2cKTTc&t=105s)
+- [final video public version](https://www.youtube.com/watch?v=FrdpRCxJEmM&t=40s)
+- [final video private version](https://www.youtube.com/watch?v=K8b0A2cKTTc&t=105s)
 
 ## CI/CD Pipeline Information and Documentation:
+All of the CI/Cd pipeline and JsDocs souce is under **/docs** folder.\
 You can find documentation and implementation information about our CI/CD pipeline [here](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/cicd/index.md)!\
 The JsDocs information is [here](https://zvidmarb.github.io/cse110-w21-group23/docs/jsdocs/global.html#changeButtonText)\
 We have recorded a video to explain how our cicd pipeline works, if you are interested, click [here](https://youtu.be/PCaQwrHsKXg).
