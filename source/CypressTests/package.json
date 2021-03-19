@@ -1,0 +1,20 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.9.2",
+    "cypress": "^6.8.0"
+  },
+  "dependencies": {
+    "istanbul-lib-coverage": "^3.0.0",
+    "nyc": "^15.1.0"
+  }
+}
