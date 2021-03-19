@@ -4,6 +4,10 @@
 You can access pomo web using this [link](https://zvidmarb.github.io/cse110-w21-group23/).
 ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/pomoScreenShot.png)
 
+## Final project videos
+[final video public version](https://www.youtube.com/watch?v=FrdpRCxJEmM&t=40s)
+[final video private version](https://www.youtube.com/watch?v=K8b0A2cKTTc&t=105s)
+
 ## CI/CD Pipeline Information and Documentation:
 You can find documentation and implementation information about our CI/CD pipeline [here](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/cicd/index.md)!\
 The JsDocs information is [here](https://zvidmarb.github.io/cse110-w21-group23/docs/jsdocs/global.html#changeButtonText)\
@@ -35,6 +39,11 @@ The full design documentation of our pomo app is under **/specs** folder.
   - [Retrospective](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030521-retrospective2.md)
   - [Review](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030821-sprint-2-review.md)
 
+## Admins
+- You can see all the meeting notes [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/meetings)
+- The signed contract is included [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/misc)
+- Standup meeting records listed [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/standup)
+- All the status video and final project video [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/videos)
 ## Source 
 [\source](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source) folder includes all souce code and test code of pomo web.\
 We separate the code in three part, css code in \css folder, java script code in \js folder, and the index.html is in the root of \source.
