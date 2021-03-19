@@ -25,19 +25,20 @@ The full design documentation of our pomo app is under **/specs** folder.
 
 ## Sprints
 #### Once we finished the design part and move on to build our pomo web, we start to have sprint section follow the guidance of agile.
-- Sprint 1 planning:
-  - 
-- Sprint 2 planning:
+- Sprint 1
+  - [Team split up](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/020921-sprint1TeamSplitUp.md)
+  - [Planning](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021121-sprint1Planning.md)
+  - [Retrospective](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021821-retrospective1.md)
+  - [Review](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021821-sprint-1-review.md)
+- Sprint 2
+  - [Planning](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/022121-sprint2Planning.md)
+  - [Retrospective](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030521-retrospective2.md)
+  - [Review](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030821-sprint-2-review.md)
 
 ## Source 
 [\source](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source) folder includes all souce code and test code of pomo web.\
 We separate the code in three part, css code in \css folder, java script code in \js folder, and the index.html is in the root of \source.
 
 - Unit test
-If you want to know more about the unit test, click here.
+If you want to know more about the unit test, click [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source/unitTests).
 
-## Test
-- Test documentation
-- Unit test
-- Cypress
-- 
