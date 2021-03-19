@@ -4,7 +4,12 @@
 You can access pomo web using this [link](https://zvidmarb.github.io/cse110-w21-group23/).
 ![pomoLayout](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/media/pomoScreenShot.png)
 
+## Final project videos
+- [final video public version](https://www.youtube.com/watch?v=FrdpRCxJEmM&t=40s)
+- [final video private version](https://www.youtube.com/watch?v=K8b0A2cKTTc&t=105s)
+
 ## CI/CD Pipeline Information and Documentation:
+All of the CI/Cd pipeline and JsDocs souce is under **/docs** folder.\
 You can find documentation and implementation information about our CI/CD pipeline [here](https://github.com/zvidmarb/cse110-w21-group23/blob/master/docs/cicd/index.md)!\
 The JsDocs information is [here](https://zvidmarb.github.io/cse110-w21-group23/docs/jsdocs/global.html#changeButtonText)\
 We have recorded a video to explain how our cicd pipeline works, if you are interested, click [here](https://youtu.be/PCaQwrHsKXg).
@@ -25,19 +30,25 @@ The full design documentation of our pomo app is under **/specs** folder.
 
 ## Sprints
 #### Once we finished the design part and move on to build our pomo web, we start to have sprint section follow the guidance of agile.
-- Sprint 1 planning:
-  - 
-- Sprint 2 planning:
+- Sprint 1
+  - [Team split up](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/020921-sprint1TeamSplitUp.md)
+  - [Planning](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021121-sprint1Planning.md)
+  - [Retrospective](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021821-retrospective1.md)
+  - [Review](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/021821-sprint-1-review.md)
+- Sprint 2
+  - [Planning](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/022121-sprint2Planning.md)
+  - [Retrospective](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030521-retrospective2.md)
+  - [Review](https://github.com/zvidmarb/cse110-w21-group23/blob/master/admin/meetings/030821-sprint-2-review.md)
 
+## Admins
+- You can see all the meeting notes [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/meetings)
+- The signed contract is included [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/misc)
+- Standup meeting records listed [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/standup)
+- All the status video and final project video [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/admin/videos)
 ## Source 
 [\source](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source) folder includes all souce code and test code of pomo web.\
 We separate the code in three part, css code in \css folder, java script code in \js folder, and the index.html is in the root of \source.
 
 - Unit test
-If you want to know more about the unit test, click here.
+If you want to know more about the unit test, click [here](https://github.com/zvidmarb/cse110-w21-group23/tree/master/source/unitTests).
 
-## Test
-- Test documentation
-- Unit test
-- Cypress
-- 
